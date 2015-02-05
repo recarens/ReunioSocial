@@ -1,1 +1,2 @@
 C:\Users\Eric\Google Drive\DAM Compartida\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.exe.config
+C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.exe.config
