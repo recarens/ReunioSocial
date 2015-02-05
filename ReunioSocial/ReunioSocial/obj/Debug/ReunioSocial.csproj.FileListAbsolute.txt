@@ -2,7 +2,6 @@ C:\Users\Eric\Google Drive\DAM Compartida\ReunioSocial\ReunioSocial\bin\Debug\Re
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.exe.config
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.exe
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.pdb
-C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.csprojResolveAssemblyReference.cache
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\MainWindow.baml
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\MainWindow.g.cs
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\App.g.cs
