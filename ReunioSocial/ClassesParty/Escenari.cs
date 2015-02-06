@@ -7,7 +7,7 @@ namespace ClassesParty
 {
     public class Escenari
     {
-        int[,] esc;
+        Persona[,] esc;
         int files;
         int columnes;
         /// <summary>
@@ -17,7 +17,7 @@ namespace ClassesParty
         /// <param name="columnes">Número de columnes de l'escenari</param>
         public Escenari(int files, int columnes)
         {
-            esc = new int[files, columnes];
+            esc = new Persona[files, columnes];
             this.files = files;
             this.columnes = columnes;
         }
@@ -86,7 +86,15 @@ namespace ClassesParty
         /// <returns>Matriu de caràcters</returns>
         public String[,] ContingutNoms()
         {
-
+            string[,] contingut = new string[files, columnes];
+            for(int i = 0; i < contingut.GetLength(0);i++)
+            {
+                for (int j = 0; j < contingut.GetLength(1); j++)
+                {
+                    contingut[i, j] = esc[i, j].Nom.ToString().Trim();
+                }
+            }
+            return contingut;
         }
         /// <summary>
         /// Elimina una persona de l'escenari i de la taula de persones
