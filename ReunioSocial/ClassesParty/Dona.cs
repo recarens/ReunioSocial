@@ -14,15 +14,15 @@ namespace ClassesParty
         /// <param name="nom">String que identifica aquesta Dona</param>
         /// <param name="simpa">Taula de simpaties envers els altres convidats</param>
         /// <param name="sexe">Plus de simpatia envers convidats del sexe contrari</param>
-        public Dona(string nom, int[] simpa, int sexe) : base(nom, simpa, sexe) { }
+        public Dona(string nom, int[] simpa, int sexe) : base(nom, simpa, sexe){}
         /// <summary>
         /// Crea una Dona
         /// </summary>
         /// <param name="nom"> String que identifica aquesta Dona</param>
         /// <param name="sexe">Plus de simpatia envers convidats del sexe contrari</param>
-        public Dona(string nom, int sexe) { }
+        public Dona(string nom, int sexe):base(nom,sexe){}
         /// <summary>
-        /// Interès d'aquest home per una posició
+        /// Interès d'aquesta dona per una posició
         /// </summary>
         /// <param name="pos">Posició per la qual s'interessa</param>
         /// <returns>Interès quantificat</returns>
