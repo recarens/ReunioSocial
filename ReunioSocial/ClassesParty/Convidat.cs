@@ -8,19 +8,32 @@ namespace ClassesParty
 {
     public abstract class Convidat : Persona
     {
+        string nom;
+        int[] simp;
+        int sexe;
         /// <summary>
         /// Crea un convidat
         /// </summary>
         /// <param name="nom">string que l'identificarà</param>
         /// <param name="simp">Taula de simpaties</param>
         /// <param name="sex">Plus de simpatia sobre el sexe contrari</param>
-        public Convidat(string nom, int[] simp, int sexe) { }
+        public Convidat(string nom, int[] simp, int sexe)
+        {
+            this.nom = nom;
+            this.simp = simp;
+            this.sexe = sexe;
+        }
         /// <summary>
         /// Crea un convidat
         /// </summary>
         /// <param name="nom">Caràcter que l'identificarà</param>
         /// <param name="sex">Plus de simpatia sobre el sexe contrari</param>
-        public Convidat(string nom, int sexe) { }
+        public Convidat(string nom, int sexe)
+        {
+            this.nom = nom;
+            this.simp = new int[0];
+            this.sexe = sexe;
+        }
         /// <summary>
         /// Retorna o estableix la simpaties envers a algú
         /// </summary>
@@ -34,8 +47,14 @@ namespace ClassesParty
         /// </summary>
         public int PlusSexe
         {
-            get;
-            set;
+            get
+            {
+                return sexe;
+            }
+            set
+            {
+                this.sexe = value;
+            }
         }
         /// <summary>
         /// Retorna que si és un convidat
@@ -43,7 +62,7 @@ namespace ClassesParty
         /// <returns>Cert</returns>
         public override bool EsConvidat()
         {
-        
+            return true;
         }
     }
 }

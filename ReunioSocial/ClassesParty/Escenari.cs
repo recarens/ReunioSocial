@@ -8,8 +8,10 @@ namespace ClassesParty
     public class Escenari
     {
         Persona[,] esc;
-        int files;
-        int columnes;
+        int nHomes;
+        int nDones;
+        int nCambrers;
+        TaulaPersones tp;
         /// <summary>
         /// Crea un escenari donades unes mides
         /// </summary>
@@ -18,38 +20,46 @@ namespace ClassesParty
         public Escenari(int files, int columnes)
         {
             esc = new Persona[files, columnes];
-            this.files = files;
-            this.columnes = columnes;
+            nHomes = 0;
+            nDones = 0;
+            nCambrers = 0;
+            tp = new TaulaPersones();
         }
         /// <summary>
         /// Retorna el número de files de l'escenari
         /// </summary>
         public int Files
         {
-            get { return files; }
+            get { return esc.GetLength(0); }
         }
         /// <summary>
         /// Retorna el número de columnes de l'escenari
         /// </summary>
         public int Columnes
         {
-            get { return columnes; }
+            get { return esc.GetLength(1); }
         }
         /// <summary>
         /// Retorna el número de homes que hi ha dins de l'escenari
         /// </summary>
         public int Homes
-        { get; }
+        { 
+            get { return nHomes;} 
+        }
         /// <summary>
         /// Retorna el número de dones que hi ha dins de l'escenari
         /// </summary>
         public int Dones
-        { get; }
+        {
+            get { return nDones; }
+        }
         /// <summary>
         /// Retorna el número de Cambrers que hi ha dins de l'escenari
         /// </summary>
         public int Cambrers
-        { get; }
+        { 
+            get { return nCambrers;} 
+        }
         /// <summary>
         /// Mou una persona de (filOrig, colOrig) fins a la posicio adjacent(filDesti,colDesti)
         /// Es suposa que les coordenades són vàlides, que hi ha una persona a l'origen i que el destí està buit.
@@ -67,7 +77,7 @@ namespace ClassesParty
         /// </summary>
         public Posicio this[int fila, int col]
         {
-            get { ;}
+            get { return (Posicio)esc[fila,col];}
         }
         /// <summary>
         /// Mira si una coordenada es correcte per ser destí d'una persona
@@ -86,7 +96,7 @@ namespace ClassesParty
         /// <returns>Matriu de caràcters</returns>
         public String[,] ContingutNoms()
         {
-            string[,] contingut = new string[files, columnes];
+            string[,] contingut = new string[esc.GetLength(0), esc.GetLength(1)];
             for(int i = 0; i < contingut.GetLength(0);i++)
             {
                 for (int j = 0; j < contingut.GetLength(1); j++)

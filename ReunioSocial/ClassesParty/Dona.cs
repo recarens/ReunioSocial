@@ -27,6 +27,8 @@ namespace ClassesParty
         /// <param name="pos">Posició per la qual s'interessa</param>
         /// <returns>Interès quantificat</returns>
         public override int Interes(Posicio pos)
-        { }
+        {
+
+        }
     }
 }

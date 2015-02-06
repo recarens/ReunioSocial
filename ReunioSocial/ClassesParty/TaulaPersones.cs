@@ -28,9 +28,7 @@ namespace ClassesParty
             }
             set
             {
-
-                nom = nom.ToLower();
-                taulaPersones.Add(nom, p);
+                taulaPersones.Add(nom.ToString().ToLower(),value);
             }
 
         }
@@ -38,23 +36,36 @@ namespace ClassesParty
         /// Obtè el número total de persones
         /// </summary>
         public int NumPersones
-        { get; }
+        {
+            get
+            {
+                return taulaPersones.Count;
+            }
+        }
         /// <summary>
         /// Afegeix una persona a la taula
         /// </summary>
         /// <param name="conv">Convidat a afegir</param>
-        public void Afegir(Persona pers) { }
+        public void Afegir(Persona pers) 
+        {
+            taulaPersones.Add(pers.Nom.ToString().ToLower(), pers);
+        }
         /// <summary>
         /// Eliminar una persona de la taula
         /// </summary>
         /// <param name="conv">Convidat a eliminar</param>
-        public void Eliminar(Persona pers) { }
+        public void Eliminar(Persona pers) 
+        {
+            taulaPersones.Remove(pers.Nom.ToString().ToLower());
+        }
         /// <summary>
         /// Elimina la persona donat el seu nom
         /// </summary>
         /// <param name="posicio">Posició a eliminar</param>
         public void Eliminar(string nom)
         {
+            nom = nom.ToLower();
+            taulaPersones.Remove(nom);
         }
     }
 }

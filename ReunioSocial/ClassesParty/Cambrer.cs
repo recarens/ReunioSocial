@@ -8,17 +8,23 @@ namespace ClassesParty
 {
     public class Cambrer : Persona
     {
+        string nom;
+        int i = 0;
         /// <summary>
         /// Crea un cambrer (Persona de la que no importa el nom, i es dirà "Cambrer 1",
         /// "Cambrer 2", "Cambrer 3", "Cambrer 4" ... "CambrerN"/// </summary>
-        public Cambrer() { }
+        public Cambrer()
+        {
+            
+            nom = "Cambrer "+ i++;
+        }
         /// <summary>
         /// Interès del cambrer per una posició
         /// </summary>
         /// <param name="pos">posició per la que s'interessa</param>/// <returns>Retorna 0 si no hi ha ningú, 1 si hi ha un convidat i -1 si un cambrer</returns>
         public override int Interes(Posicio pos)
         {
-        
+            
         }
         /// <summary>
         /// Retorna que el Cambrer no és un convidat
@@ -26,7 +32,7 @@ namespace ClassesParty
         /// <returns>false</returns>
         public override bool EsConvidat()
         {
-        
+            return false;
         }
     }
 }

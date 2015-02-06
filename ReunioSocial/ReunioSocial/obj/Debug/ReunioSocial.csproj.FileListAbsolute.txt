@@ -14,3 +14,4 @@ C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\
 C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.exe.config
 C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.exe
 C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.pdb
+C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.csprojResolveAssemblyReference.cache

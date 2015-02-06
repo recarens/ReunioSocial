@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using ClassesParty;
 namespace ReunioSocial
 {
     /// <summary>
@@ -23,6 +23,8 @@ namespace ReunioSocial
         public MainWindow()
         {
             InitializeComponent();
+            Home h1 = new Home("amparo", 1);
+
         }
     }
 }
