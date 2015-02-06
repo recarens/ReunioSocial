@@ -37,8 +37,6 @@ namespace ClassesParty
         public Persona() : base()
         {
             this.nom = "Anonymous";
-            this.Fila = 0;
-            this.Columna = 0;
         }
         /// <summary>
         /// Obté el nom de la persona
