@@ -70,7 +70,11 @@ namespace ClassesParty
         /// <param name="colDesti">Columna de la coordenada de destí</param>
         private void Moure(int filOrig, int colOrig, int filDesti, int colDesti)
         {
-
+            if (DestiValid(filDesti, colDesti) && esc[filDesti, colDesti].Buida)
+            {
+                esc[filDesti, colDesti] = esc[filOrig, colDesti];
+                esc[filOrig, colDesti] = null;
+            }
         }
         /// <summary>
         /// Retorna la Posició que hi ha en una coordenada donada
@@ -87,6 +91,10 @@ namespace ClassesParty
         /// <returns>retorna si la coordenada és vàlida i està buida</returns>
         public bool DestiValid(int fil, int col)
         {
+            bool destiValid = false;
+            if (fil < esc.GetLength(0) && fil >= 0 && col >= 0 && col < esc.GetLength(1))
+                destiValid = true;
+            return destiValid;
 
         }
         /// <summary>
@@ -113,7 +121,17 @@ namespace ClassesParty
         /// <param name="col">Columna on està la persona</param>
         public void buidar(int fil, int col)
         {
+            tp.Eliminar(esc[fil, col]);
 
+            if (!esc[fil, col].EsConvidat())
+            {
+                nCambrers--;
+            }
+            else
+            {
+               //si es home ho dona
+            }
+            esc[fil, col] = null;
         }
         /// <summary>
         /// Posa una Persona dins de l'escenari i a la taula de persones
@@ -122,6 +140,7 @@ namespace ClassesParty
         /// <param name="pers">Persona a afegir</param>
         public void posar(Persona pers)
         {
+            tp.Afegir(pers);
 
         }
         /// <summary>
@@ -131,14 +150,25 @@ namespace ClassesParty
         /// <returns>Si hi ha coincidència</returns>
         public bool NomRepetit(string nom)
         {
-
+            bool repe = false;
+            for (int i = 0; i < esc.GetLength(0); i++)
+            {
+                for (int j = 0; j < esc.GetLength(1); j++)
+                {
+                    if(esc[i,j].Nom == nom)
+                    {
+                        repe = true;
+                    }
+                }
+            }
+            return repe;
         }
         /// <summary>
         /// Fa que totes les persones facin un moviment
         /// </summary>
         public void Cicle()
         {
-
+            
         }
     }
 }

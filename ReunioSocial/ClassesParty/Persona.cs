@@ -60,8 +60,14 @@ namespace ClassesParty
         /// <param name="esc">Escenari on estan situats</param>
         /// <returns>Atracció quantificada</returns>
         private double Atraccio(int fil, int col, Escenari esc)
-        { 
-            
+        {
+            double atraccio = 0;
+
+            if (!esc[fil, col].Buida && this.Fila != fil && this.Columna != col)
+            {
+                atraccio = Interes(esc[Fila, Columna]) / Math.Sqrt(Math.Pow(2, Fila - fil) + Math.Pow(2, Fila - col));
+            }
+            return atraccio;
         }
         /// <summary>
         /// Decideix quin serà el següent moviment que farà la persona
@@ -70,9 +76,39 @@ namespace ClassesParty
         /// <returns>Una de les 5 possibles direccions (Quiet, Amunt, Avall, Dreta, Esquerra</returns>
         public Direccio OnVaig(Escenari esc)
         {
-            double atraccio = Atraccio(this.Fila, this.Columna, esc);
-            
-            return Direccio.Dreta;
+            List<double> atrracions = new List<double>();
+            double amunt = Atraccio(Fila - 1, Columna, esc);
+            double dreta = Atraccio(Fila, Columna+1, esc);
+            double esquerra = Atraccio(Fila, Columna-1, esc);
+            double avall = Atraccio(Fila + 1, Columna, esc);
+            double resultat;
+            atrracions.Add(amunt);
+            atrracions.Add(dreta);
+            atrracions.Add(esquerra);
+            atrracions.Add(avall);
+
+            resultat = atrracions.Max();
+
+            if(resultat == amunt)
+            {
+                return Direccio.Amunt;
+            }
+            else if (resultat == avall)
+            {
+                return Direccio.Avall;
+            }
+            else if (resultat == dreta)
+            {
+                return Direccio.Dreta;
+            }
+            else if (resultat == esquerra)
+            {
+                return Direccio.Esquerra;
+            }
+            else
+            {
+                return Direccio.Quiet;
+            }
         }
         /// <summary>
         /// Interès de la persona sobre una determinada posició
