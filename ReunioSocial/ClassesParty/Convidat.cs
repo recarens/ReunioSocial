@@ -39,8 +39,8 @@ namespace ClassesParty
         /// </summary>
         public int this[string nom]
         {
-            get;
-            set;
+            get {return 0;}
+            set { simp[0] = (int)value; }
         }
         /// <summary>
         /// Retorna o estableix el plus de simpatia envers del sexe contrari

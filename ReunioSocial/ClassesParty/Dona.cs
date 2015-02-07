@@ -28,7 +28,7 @@ namespace ClassesParty
         /// <returns>Interès quantificat</returns>
         public override int Interes(Posicio pos)
         {
-
+            return 0;
         }
     }
 }

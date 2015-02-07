@@ -28,7 +28,7 @@ namespace ClassesParty
             }
             set
             {
-                taulaPersones.Add(nom.ToString().ToLower(),value);
+                taulaPersones.Add(nom.ToString().ToLower(),(Persona)value);
             }
 
         }
