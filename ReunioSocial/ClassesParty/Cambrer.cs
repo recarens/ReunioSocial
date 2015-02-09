@@ -13,10 +13,9 @@ namespace ClassesParty
         /// <summary>
         /// Crea un cambrer (Persona de la que no importa el nom, i es dirà "Cambrer 1",
         /// "Cambrer 2", "Cambrer 3", "Cambrer 4" ... "CambrerN"/// </summary>
-        public Cambrer()
+        public Cambrer(int i/*aixo ho e posat jo per l'increment del numero de cambrer seria ideal autoincrementar el numero*/)
         {
-            
-            nom = "Cambrer "+ i++;
+            nom = "Cambrer "+ i;
         }
         /// <summary>
         /// Interès del cambrer per una posició
@@ -24,7 +23,20 @@ namespace ClassesParty
         /// <param name="pos">posició per la que s'interessa</param>/// <returns>Retorna 0 si no hi ha ningú, 1 si hi ha un convidat i -1 si un cambrer</returns>
         public override int Interes(Posicio pos)
         {
-            return 0;    
+            if (pos.Buida)
+            {
+                return 0;
+            }
+            else if (pos.GetType().Equals(typeof(Cambrer)))
+            {
+                return -1;
+            }
+            else if (pos.GetType().Equals(typeof(Convidat)))
+            {
+                return 1;
+            }
+            else
+                return 0;
         }
         /// <summary>
         /// Retorna que el Cambrer no és un convidat

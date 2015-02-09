@@ -17,3 +17,15 @@ C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debu
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.csprojResolveAssemblyReference.cache
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ClassesParty.dll
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ClassesParty.pdb
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.exe
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.pdb
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ClassesParty.dll
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ClassesParty.pdb
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.csprojResolveAssemblyReference.cache
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\MainWindow.baml
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\MainWindow.g.cs
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\App.g.cs
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial_MarkupCompile.cache
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.g.resources
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.Properties.Resources.resources
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.csproj.GenerateResource.Cache

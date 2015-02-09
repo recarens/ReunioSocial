@@ -168,7 +168,6 @@ namespace ClassesParty
         /// </summary>
         public void Cicle()
         {
-            
         }
     }
 }
