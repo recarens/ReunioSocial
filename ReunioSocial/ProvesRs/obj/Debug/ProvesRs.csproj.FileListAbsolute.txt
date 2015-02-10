@@ -1,1 +1,8 @@
 C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\ProvesRs.exe.config
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\ProvesRs.exe
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\ProvesRs.pdb
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\ClassesParty.dll
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\ClassesParty.pdb
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.csprojResolveAssemblyReference.cache
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.exe
+C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.pdb

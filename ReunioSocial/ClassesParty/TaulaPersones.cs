@@ -9,6 +9,7 @@ namespace ClassesParty
     public class TaulaPersones
     {
         Dictionary<string,Persona> taulaPersones;
+        int i;
         /// <summary>
         /// Crea una taula de referències a persones
         /// </summary>
@@ -48,7 +49,14 @@ namespace ClassesParty
         /// <param name="conv">Convidat a afegir</param>
         public void Afegir(Persona pers) 
         {
-            taulaPersones.Add(pers.Nom.ToString().ToLower(), pers);
+            if (pers.EsConvidat())
+                taulaPersones.Add(pers.Nom.ToString().ToLower(), pers);
+            else
+            {
+                taulaPersones.Add("Cambrer" + i, pers);
+                i++;
+            }
+
         }
         /// <summary>
         /// Eliminar una persona de la taula

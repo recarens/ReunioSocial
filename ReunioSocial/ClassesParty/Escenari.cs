@@ -121,8 +121,6 @@ namespace ClassesParty
         /// <param name="col">Columna on està la persona</param>
         public void buidar(int fil, int col)
         {
-            tp.Eliminar(esc[fil, col]);
-
             if (!esc[fil, col].EsConvidat())
             {
                 nCambrers--;
@@ -135,6 +133,7 @@ namespace ClassesParty
                     nDones--;
             }
             esc[fil, col] = null;
+            tp.Eliminar(esc[fil, col]);
         }
         /// <summary>
         /// Posa una Persona dins de l'escenari i a la taula de persones
@@ -143,9 +142,10 @@ namespace ClassesParty
         /// <param name="pers">Persona a afegir</param>
         public void posar(Persona pers)
         {
-            if (esc[pers.Fila, pers.Columna].Fila != pers.Fila && esc[pers.Fila, pers.Columna].Columna != pers.Columna)
+            if (pers.Buida)
             {
                 tp.Afegir(pers);
+                esc[pers.Fila, pers.Columna] = pers;
                 if (pers.GetType().Equals(typeof(Home)))
                     nHomes++;
                 else if (pers.GetType().Equals(typeof(Dona)))

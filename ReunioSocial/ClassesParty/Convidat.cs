@@ -8,7 +8,6 @@ namespace ClassesParty
 {
     public abstract class Convidat : Persona
     {
-        string nom;
         int[] simp;
         int sexe;
         /// <summary>
@@ -17,9 +16,8 @@ namespace ClassesParty
         /// <param name="nom">string que l'identificarà</param>
         /// <param name="simp">Taula de simpaties</param>
         /// <param name="sex">Plus de simpatia sobre el sexe contrari</param>
-        public Convidat(string nom, int[] simp, int sexe)
+        public Convidat(string nom, int[] simp, int sexe):base(nom)
         {
-            this.nom = nom;
             this.simp = simp;
             this.sexe = sexe;
         }
@@ -28,9 +26,8 @@ namespace ClassesParty
         /// </summary>
         /// <param name="nom">Caràcter que l'identificarà</param>
         /// <param name="sex">Plus de simpatia sobre el sexe contrari</param>
-        public Convidat(string nom, int sexe)
+        public Convidat(string nom, int sexe):base(nom)
         {
-            this.nom = nom;
             this.simp = new int[0];
             this.sexe = sexe;
         }

@@ -9,13 +9,12 @@ namespace ClassesParty
     public class Cambrer : Persona
     {
         string nom;
-        int i;
         /// <summary>
         /// Crea un cambrer (Persona de la que no importa el nom, i es dirà "Cambrer 1",
         /// "Cambrer 2", "Cambrer 3", "Cambrer 4" ... "CambrerN"/// </summary>
-        public Cambrer(int i/*aixo ho e posat jo per l'increment del numero de cambrer seria ideal autoincrementar el numero*/)
+        public Cambrer()//el cambrer falta la herencia  apersona sino no es pot afegir a la taulaPersones
         {
-            nom = "Cambrer "+ i;
+            nom = "Cambrer";
         }
         /// <summary>
         /// Interès del cambrer per una posició

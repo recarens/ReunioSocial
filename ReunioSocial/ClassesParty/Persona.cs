@@ -8,9 +8,7 @@ namespace ClassesParty
 {
     public abstract class Persona : Posicio
     {
-
         string nom;
-
         /// <summary>
         /// Crea una persona
         /// </summary>
@@ -28,16 +26,11 @@ namespace ClassesParty
         public Persona(string nom)
         {
             this.nom = nom;
-            this.Fila = 0;
-            this.Columna = 0;
         }
         /// <summary>
         /// Crea una persona
         /// </summary>
-        public Persona() : base()
-        {
-            this.nom = "Anonymous";
-        }
+        public Persona() : base(){}
         /// <summary>
         /// Obté el nom de la persona
         /// </summary>
