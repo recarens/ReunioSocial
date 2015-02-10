@@ -23,9 +23,6 @@ namespace ReunioSocial
         public MainWindow()
         {
             InitializeComponent();
-            Home h1 = new Home("antonio", 1);
-            Convidat d2 = new Dona("maria", 2);
-            Cambrer c1 = new Cambrer(1);
         }
     }
 }

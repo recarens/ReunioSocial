@@ -129,7 +129,10 @@ namespace ClassesParty
             }
             else
             {
-               //si es home ho dona
+                if (esc[fil, col].GetType().Equals(typeof(Home)))
+                    nHomes--;
+                else
+                    nDones--;
             }
             esc[fil, col] = null;
         }
@@ -140,8 +143,18 @@ namespace ClassesParty
         /// <param name="pers">Persona a afegir</param>
         public void posar(Persona pers)
         {
-            tp.Afegir(pers);
-
+            if (esc[pers.Fila, pers.Columna].Fila != pers.Fila && esc[pers.Fila, pers.Columna].Columna != pers.Columna)
+            {
+                tp.Afegir(pers);
+                if (pers.GetType().Equals(typeof(Home)))
+                    nHomes++;
+                else if (pers.GetType().Equals(typeof(Dona)))
+                    nDones++;
+                else
+                    nCambrers++;
+            }
+            else
+                throw new Exception("Ja hi ha una persona en aquesta posicio");
         }
         /// <summary>
         /// Mira si en el tauler hi ha alguna persona amb aquest nom
@@ -151,15 +164,19 @@ namespace ClassesParty
         public bool NomRepetit(string nom)
         {
             bool repe = false;
+            int j = 0;
+            bool trobat = false;
             for (int i = 0; i < esc.GetLength(0); i++)
             {
-                for (int j = 0; j < esc.GetLength(1); j++)
+                while (j < esc.GetLength(1) && !trobat)
                 {
                     if(esc[i,j].Nom == nom)
                     {
                         repe = true;
                     }
+                    j++;
                 }
+                j = 0;
             }
             return repe;
         }
