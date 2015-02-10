@@ -7,7 +7,7 @@ namespace ClassesParty
 {
     public class Escenari
     {
-        Persona[,] esc;
+        Posicio[,] esc;
         int nHomes;
         int nDones;
         int nCambrers;
@@ -19,7 +19,14 @@ namespace ClassesParty
         /// <param name="columnes">Número de columnes de l'escenari</param>
         public Escenari(int files, int columnes)
         {
-            esc = new Persona[files, columnes];
+            for(int fila = 0; fila < files; fila++)
+            {
+                for(int columna = 0; columna < columnes; columna++)
+                {
+                    esc[fila, columna] = new Posicio(fila, columna);    
+                }
+            }
+
             nHomes = 0;
             nDones = 0;
             nCambrers = 0;
@@ -121,7 +128,7 @@ namespace ClassesParty
         /// <param name="col">Columna on està la persona</param>
         public void buidar(int fil, int col)
         {
-            if (!esc[fil, col].EsConvidat())
+            if (!esc[fil, col].GetType().Equals(typeof(Cambrer)))
             {
                 nCambrers--;
             }
@@ -133,7 +140,7 @@ namespace ClassesParty
                     nDones--;
             }
             esc[fil, col] = null;
-            tp.Eliminar(esc[fil, col]);
+            tp.Eliminar((Persona)esc[fil, col]);
         }
         /// <summary>
         /// Posa una Persona dins de l'escenari i a la taula de persones
@@ -142,7 +149,7 @@ namespace ClassesParty
         /// <param name="pers">Persona a afegir</param>
         public void posar(Persona pers)
         {
-            if (pers.Buida)
+            if (!pers.Buida)
             {
                 tp.Afegir(pers);
                 esc[pers.Fila, pers.Columna] = pers;

@@ -32,3 +32,18 @@ C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debu
 C:\Users\Joan\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.exe.config
 C:\Users\Joan\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.exe
 C:\Users\Joan\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.pdb
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.exe.config
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.exe
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.pdb
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ClassesParty.dll
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ClassesParty.pdb
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.csprojResolveAssemblyReference.cache
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\MainWindow.baml
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\MainWindow.g.cs
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\App.g.cs
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial_MarkupCompile.cache
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.g.resources
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.Properties.Resources.resources
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.csproj.GenerateResource.Cache
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.exe
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.pdb

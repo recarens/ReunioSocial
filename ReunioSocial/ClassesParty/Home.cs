@@ -14,18 +14,23 @@ namespace ClassesParty
         /// <param name="nom">String que l'identificarà</param>
         /// <param name="simpa">Taula de simpaties</param>
         /// <param name="sexe">Plus de simpatia envers del sexe contrari</param>
+        /// 
         public Home(string nom, int[] simpa, int sexe) : base(nom, simpa, sexe){}
+       
         /// <summary>
         /// Crea un Home
         /// </summary>
         /// <param name="nom">String que l'identificarà</param>
         /// <param name="sexe">Plus de simpatia envers del sexe contrari</param>
+        /// 
         public Home(string nom, int sexe) : base(nom, sexe) { }
+        
         /// <summary>
         /// Interès d'aquest home per una posició
         /// </summary>
         /// <param name="pos">Posició per la qual s'interessa</param>
         /// <returns>Interès quantificat</returns>
+        /// 
         public override int Interes(Posicio pos)
         {
             return 0;

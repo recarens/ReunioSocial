@@ -56,9 +56,9 @@ namespace ClassesParty
         {
             double atraccio = 0;
 
-            if (!esc[fil, col].Buida && this.Fila != fil && this.Columna != col)
+            if (!esc[fil, col].Buida && (this.Fila != fil) || (this.Columna != col))
             {
-                atraccio = Interes(esc[Fila, Columna]) / Math.Sqrt(Math.Pow(2, Fila - fil) + Math.Pow(2, Fila - col));
+                atraccio = Interes(esc[Fila, Columna]) / Math.Sqrt((Math.Pow(2, Fila - fil)) + (Math.Pow(2, Columna - col)));
             }
             return atraccio;
         }
@@ -69,18 +69,18 @@ namespace ClassesParty
         /// <returns>Una de les 5 possibles direccions (Quiet, Amunt, Avall, Dreta, Esquerra</returns>
         public Direccio OnVaig(Escenari esc)
         {
-            List<double> atrracions = new List<double>();
+            List<double> atraccions = new List<double>();
             double amunt = Atraccio(Fila - 1, Columna, esc);
             double dreta = Atraccio(Fila, Columna+1, esc);
             double esquerra = Atraccio(Fila, Columna-1, esc);
             double avall = Atraccio(Fila + 1, Columna, esc);
             double resultat;
-            atrracions.Add(amunt);
-            atrracions.Add(dreta);
-            atrracions.Add(esquerra);
-            atrracions.Add(avall);
+            atraccions.Add(amunt);
+            atraccions.Add(dreta);
+            atraccions.Add(esquerra);
+            atraccions.Add(avall);
 
-            resultat = atrracions.Max();
+            resultat = atraccions.Max();
 
             if(resultat == amunt)
             {

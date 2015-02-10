@@ -7,3 +7,11 @@ C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\Pr
 C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.exe
 C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.pdb
 C:\Users\Joan\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\ProvesRs.exe.config
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\ProvesRs.exe.config
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\ProvesRs.exe
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\ProvesRs.pdb
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\ClassesParty.dll
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\ClassesParty.pdb
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.csprojResolveAssemblyReference.cache
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.exe
+C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.pdb
