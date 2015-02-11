@@ -27,7 +27,6 @@ namespace ClassesParty
                     esc[fila, columna] = new Posicio(fila, columna);    
                 }
             }
-
             nHomes = 0;
             nDones = 0;
             nCambrers = 0;
@@ -81,7 +80,7 @@ namespace ClassesParty
             if (DestiValid(filDesti, colDesti) && esc[filDesti, colDesti].Buida)
             {
                 esc[filDesti, colDesti] = esc[filOrig, colDesti];
-                esc[filOrig, colDesti] = null;
+                esc[filOrig, colDesti] = new Posicio();
             }
         }
         /// <summary>
@@ -117,7 +116,13 @@ namespace ClassesParty
             {
                 for (int j = 0; j < contingut.GetLength(1); j++)
                 {
-                    contingut[i, j] = ((Persona)esc[i, j]).Nom.ToString().Trim();
+                    if (!esc[i, j].Buida)
+                    {
+                        if (((Persona)esc[i, j]).EsConvidat())
+                            contingut[i, j] = ((Convidat)esc[i, j]).Nom.ToString().Trim();
+                        else
+                            contingut[i, j] = ((Cambrer)esc[i, j]).NomC.ToString().Trim();
+                    }
                 }
             }
             return contingut;
@@ -172,19 +177,34 @@ namespace ClassesParty
         /// <returns>Si hi ha coincidència</returns>
         public bool NomRepetit(string nom)
         {
+            nom = nom.ToString().ToLower();
             bool repe = false;
-            int j = 0;
-            bool trobat = false;
-            for (int i = 0; i < esc.GetLength(0); i++)
+            int j = 0, i = 0;
+            while (i < esc.GetLength(0) && !repe)
             {
-                while (j < esc.GetLength(1) && !trobat)
+                while (j < esc.GetLength(1) && !repe)
                 {
-                    if(((Persona)esc[i,j]).Nom == nom)
+                    if (!esc[i, j].Buida)
                     {
-                        repe = true;
+                        if (((Persona)esc[i, j]).EsConvidat())
+                        {
+                            if (((Persona)esc[i, j]).Nom.ToString().ToLower() == nom)
+                            {
+                                repe = true;
+
+                            }
+                        }
+                        else
+                        {
+                            if (((Cambrer)esc[i, j]).NomC.ToString().ToLower() == nom)
+                            {
+                                repe = true;
+                            }
+                        }
                     }
                     j++;
                 }
+                i++;
                 j = 0;
             }
             return repe;
@@ -194,6 +214,43 @@ namespace ClassesParty
         /// </summary>
         public void Cicle()
         {
+            
+            foreach (Persona p in tp)
+            {
+                Direccio d = p.OnVaig(this);
+                if (d == Direccio.Amunt)
+                {
+                    if(this.DestiValid(p.Fila-1,p.Columna))
+                    {
+                        this.Moure(p.Fila, p.Columna, p.Fila -1, p.Columna);
+                    }
+                }
+                else if (d == Direccio.Avall)
+                {
+                    if (this.DestiValid(p.Fila +1, p.Columna))
+                    {
+                        this.Moure(p.Fila, p.Columna, p.Fila + 1, p.Columna);
+                    }
+                }
+                else if (d == Direccio.Dreta)
+                {
+                    if (this.DestiValid(p.Fila, p.Columna + 1))
+                    {
+                        this.Moure(p.Fila, p.Columna, p.Fila, p.Columna +1);
+                    }
+                }
+                else if (d == Direccio.Quiet)
+                {
+                    if (this.DestiValid(p.Fila, p.Columna - 1))
+                    {
+                        this.Moure(p.Fila, p.Columna, p.Fila, p.Columna - 1);
+                    }
+                }
+                else
+                {
+                        this.Moure(p.Fila, p.Columna, p.Fila, p.Columna);
+                }
+            }
         }
     }
 }

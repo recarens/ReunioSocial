@@ -27,13 +27,20 @@ namespace ProvesRs
             // Col·loquem un cambrer
             c1.Fila = 4; c1.Columna = 5;
             esc1.posar(c1);
-            esc1.buidar(4, 5);
+            d2.Fila = 3; d2.Columna = 2;
+            esc1.posar(d2);
+            //esc1.buidar(4, 5);
 
             Console.WriteLine(c1.Nom);
 
             Direccio direccio = c1.OnVaig(esc1);
 
+            bool repe = esc1.NomRepetit("maria");
+            bool repeC = esc1.NomRepetit("cambrer0");
+            bool repe2 = esc1.NomRepetit("ss");
             string[,] escStrings = esc1.ContingutNoms();
+
+            esc1.Cicle();
         }
     }
 }

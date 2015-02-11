@@ -114,5 +114,6 @@ namespace ClassesParty
         /// </summary>
         /// <returns>Retorna si és convidat</returns>
         public abstract bool EsConvidat();
+
     }
 }

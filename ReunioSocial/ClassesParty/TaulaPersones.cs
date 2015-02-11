@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace ClassesParty
 {
-    public class TaulaPersones
+    public class TaulaPersones:IEnumerable<Persona>
     {
         Dictionary<string,Persona> taulaPersones;
-        int i;
+        List<string> claus;
+
+        
         /// <summary>
         /// Crea una taula de referències a persones
         /// </summary>
         public TaulaPersones()
         {
             taulaPersones = new Dictionary<string, Persona>();
+            claus = new List<string>();
         }
         /// <summary>
         /// Assigna o obté una persona de la taula
@@ -30,6 +33,7 @@ namespace ClassesParty
             set
             {
                 taulaPersones.Add(nom.ToString().ToLower(),(Persona)value);
+                claus.Add(nom.ToString().ToLower());
             }
 
         }
@@ -43,6 +47,15 @@ namespace ClassesParty
                 return taulaPersones.Count;
             }
         }
+
+        /// <summary>
+        /// Obtè les claus del diccionari
+        /// </summary>
+        public List<string> Claus
+        {
+            get { return claus; }
+        }
+
         /// <summary>
         /// Afegeix una persona a la taula
         /// </summary>
@@ -50,12 +63,16 @@ namespace ClassesParty
         public void Afegir(Persona pers) 
         {
             if (pers.EsConvidat())
+            {
                 taulaPersones.Add(pers.Nom.ToString().ToLower(), pers);
+                claus.Add(pers.Nom.ToString().ToLower());
+            }
             else
             {
                 taulaPersones.Add(((Cambrer)pers).NomC.ToString().ToLower(), pers);
+                claus.Add(((Cambrer)pers).NomC.ToString().ToLower());
             }
-
+            
         }
         /// <summary>
         /// Eliminar una persona de la taula
@@ -63,8 +80,16 @@ namespace ClassesParty
         /// <param name="conv">Convidat a eliminar</param>
         public void Eliminar(Persona pers) 
         {
-
-            taulaPersones.Remove(((Cambrer)pers).NomC.ToString().ToLower());
+            if (pers.EsConvidat())
+            {
+                taulaPersones.Remove(pers.Nom.ToString().ToLower());
+                claus.Remove(pers.Nom.ToString().ToLower());
+            }
+            else
+            {
+                taulaPersones.Remove(((Cambrer)pers).NomC.ToString().ToLower());
+                claus.Remove(((Cambrer)pers).NomC.ToString().ToLower());
+            }
         }
         /// <summary>
         /// Elimina la persona donat el seu nom
@@ -74,6 +99,22 @@ namespace ClassesParty
         {
             nom = nom.ToLower();
             taulaPersones.Remove(nom);
+        }
+
+        public IEnumerator<Persona> GetEnumerator()
+        {
+            List<Persona> llista = new List<Persona>();
+            for (int i = 0; i < NumPersones;i++)
+            {
+                llista.Add(taulaPersones[claus[i]]);
+            }
+                foreach (Persona tc in llista)
+                    yield return tc;
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }
