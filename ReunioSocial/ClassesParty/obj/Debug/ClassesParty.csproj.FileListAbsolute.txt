@@ -7,7 +7,6 @@ C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ClassesParty\bin\Debu
 C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ClassesParty\bin\Debug\ClassesParty.pdb
 C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ClassesParty\obj\Debug\ClassesParty.dll
 C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ClassesParty\obj\Debug\ClassesParty.pdb
-C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ClassesParty\obj\Debug\ClassesParty.csprojResolveAssemblyReference.cache
 C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ClassesParty\bin\Debug\ClassesParty.dll
 C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ClassesParty\bin\Debug\ClassesParty.pdb
 C:\Users\daviid\Google Drive\2on DAM\M07 - Desenvolupament d'interficies\UF1\ReunioSocial\ReunioSocial\ClassesParty\obj\Debug\ClassesParty.csprojResolveAssemblyReference.cache

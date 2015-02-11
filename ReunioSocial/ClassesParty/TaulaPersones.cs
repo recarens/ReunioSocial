@@ -53,8 +53,7 @@ namespace ClassesParty
                 taulaPersones.Add(pers.Nom.ToString().ToLower(), pers);
             else
             {
-                taulaPersones.Add("Cambrer" + i, pers);
-                i++;
+                taulaPersones.Add(((Cambrer)pers).NomC.ToString().ToLower(), pers);
             }
 
         }
@@ -64,7 +63,8 @@ namespace ClassesParty
         /// <param name="conv">Convidat a eliminar</param>
         public void Eliminar(Persona pers) 
         {
-            taulaPersones.Remove(pers.Nom.ToString().ToLower());
+
+            taulaPersones.Remove(((Cambrer)pers).NomC.ToString().ToLower());
         }
         /// <summary>
         /// Elimina la persona donat el seu nom

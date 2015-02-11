@@ -9,6 +9,8 @@ namespace ClassesParty
     public class Cambrer : Persona
     {
         string nom;
+
+       
         static int numCambrers = 0;
         /// <summary>
         /// Crea un cambrer (Persona de la que no importa el nom, i es dirà "Cambrer 1",
@@ -17,6 +19,10 @@ namespace ClassesParty
         {
             nom = "Cambrer"+numCambrers;
             numCambrers++;
+        }
+        public string NomC
+        {
+            get { return nom; }
         }
         /// <summary>
         /// Interès del cambrer per una posició

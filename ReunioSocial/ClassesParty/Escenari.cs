@@ -19,6 +19,7 @@ namespace ClassesParty
         /// <param name="columnes">Número de columnes de l'escenari</param>
         public Escenari(int files, int columnes)
         {
+            esc = new Posicio[files,columnes];
             for(int fila = 0; fila < files; fila++)
             {
                 for(int columna = 0; columna < columnes; columna++)
@@ -109,14 +110,14 @@ namespace ClassesParty
         /// representant cada persona amb el seu nom
         /// </summary>
         /// <returns>Matriu de caràcters</returns>
-        public String[,] ContingutNoms()
+        public String[,] ContingutNoms() //!
         {
             string[,] contingut = new string[esc.GetLength(0), esc.GetLength(1)];
             for(int i = 0; i < contingut.GetLength(0);i++)
             {
                 for (int j = 0; j < contingut.GetLength(1); j++)
                 {
-                    contingut[i, j] = esc[i, j].Nom.ToString().Trim();
+                    contingut[i, j] = ((Persona)esc[i, j]).Nom.ToString().Trim();
                 }
             }
             return contingut;
@@ -128,7 +129,7 @@ namespace ClassesParty
         /// <param name="col">Columna on està la persona</param>
         public void buidar(int fil, int col)
         {
-            if (!esc[fil, col].GetType().Equals(typeof(Cambrer)))
+            if (esc[fil, col].GetType().Equals(typeof(Cambrer)))
             {
                 nCambrers--;
             }
@@ -139,8 +140,9 @@ namespace ClassesParty
                 else
                     nDones--;
             }
-            esc[fil, col] = null;
             tp.Eliminar((Persona)esc[fil, col]);
+            esc[fil, col] = new Posicio(fil,col);
+            
         }
         /// <summary>
         /// Posa una Persona dins de l'escenari i a la taula de persones
@@ -177,7 +179,7 @@ namespace ClassesParty
             {
                 while (j < esc.GetLength(1) && !trobat)
                 {
-                    if(esc[i,j].Nom == nom)
+                    if(((Persona)esc[i,j]).Nom == nom)
                     {
                         repe = true;
                     }
