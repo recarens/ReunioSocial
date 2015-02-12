@@ -29,8 +29,7 @@ namespace ProvesRs
             esc1.posar(c1);
             d2.Fila = 3; d2.Columna = 2;
             esc1.posar(d2);
-            //esc1.buidar(4, 5);
-
+            esc1.buidar(4, 5);
             Console.WriteLine(c1.Nom);
 
             Direccio direccio = c1.OnVaig(esc1);
