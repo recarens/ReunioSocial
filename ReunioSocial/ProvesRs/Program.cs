@@ -50,10 +50,14 @@ namespace ProvesRs
 
 
             Direccio d = antonio.OnVaig(esc1);
+            Direccio d1 = maria.OnVaig(esc1);
 
             int i = antonio["maria"];
-
-            esc1.Cicle();
+            for (int a = 0; a < 10; a++)
+            {
+                esc1.Cicle();
+                Console.WriteLine(maria.Fila + " " + maria.Columna+"        "+antonio.Fila + " " + antonio.Columna);
+            }
         }
     }
 }

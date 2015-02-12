@@ -233,6 +233,7 @@ namespace ClassesParty
                     if(this.DestiValid(p.Fila-1,p.Columna))
                     {
                         this.Moure(p.Fila, p.Columna, p.Fila -1, p.Columna);
+                        p.Fila = p.Fila - 1;
                     }
                 }
                 else if (d == Direccio.Avall)
@@ -240,6 +241,7 @@ namespace ClassesParty
                     if (this.DestiValid(p.Fila +1, p.Columna))
                     {
                         this.Moure(p.Fila, p.Columna, p.Fila + 1, p.Columna);
+                        p.Fila = p.Fila +1;
                     }
                 }
                 else if (d == Direccio.Dreta)
@@ -247,13 +249,15 @@ namespace ClassesParty
                     if (this.DestiValid(p.Fila, p.Columna + 1))
                     {
                         this.Moure(p.Fila, p.Columna, p.Fila, p.Columna +1);
+                        p.Columna = p.Columna +1;
                     }
                 }
-                else if (d == Direccio.Quiet)
+                else if (d == Direccio.Esquerra)
                 {
                     if (this.DestiValid(p.Fila, p.Columna - 1))
                     {
                         this.Moure(p.Fila, p.Columna, p.Fila, p.Columna - 1);
+                        p.Fila = p.Fila + 1;
                     }
                 }
                 else
