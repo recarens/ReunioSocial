@@ -1,8 +1,9 @@
 ﻿<Window x:Class="ReunioSocial.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="451.773" Width="722.34">
     <Grid>
-        
+        <Grid x:Name="escenari"/>
+        <Grid x:Name="graellaSimpaties"/>
     </Grid>
 </Window>
