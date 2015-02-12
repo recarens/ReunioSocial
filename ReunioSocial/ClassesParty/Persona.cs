@@ -70,16 +70,33 @@ namespace ClassesParty
         public Direccio OnVaig(Escenari esc)
         {
             List<double> atraccions = new List<double>();
-            double amunt = Atraccio(Fila - 1, Columna, esc);
-            double dreta = Atraccio(Fila, Columna+1, esc);
-            double esquerra = Atraccio(Fila, Columna-1, esc);
-            double avall = Atraccio(Fila + 1, Columna, esc);
+            double amunt = 0;
+            double dreta =0;
+            double esquerra = 0;
+            double avall = 0;
             double resultat;
+            foreach (Persona p in esc.Tp)
+            {
+                if (p.Nom != this.nom)
+                {
+                    if (amunt < Atraccio(p.Fila, p.Columna, esc))
+                        amunt = Atraccio(p.Fila, p.Columna, esc);
+
+                    if (dreta < Atraccio(p.Fila, p.Columna, esc))
+                        dreta = Atraccio(Fila, Columna + 1, esc);
+
+                    if (esquerra < Atraccio(p.Fila, p.Columna, esc))
+                        esquerra = Atraccio(Fila, Columna - 1, esc);
+
+                    if (avall < Atraccio(p.Fila, p.Columna, esc))
+                        avall = Atraccio(Fila + 1, Columna, esc);
+                }
+            }
             atraccions.Add(amunt);
             atraccions.Add(dreta);
             atraccions.Add(esquerra);
             atraccions.Add(avall);
-
+            
             resultat = atraccions.Max();
 
             if(resultat == amunt)

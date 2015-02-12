@@ -35,6 +35,7 @@ namespace ClassesParty
         /// <returns>Interès quantificat</returns>
         public override int Interes(Posicio pos)
         {
+
             int interes = 0;
             if(!pos.Buida)
             {
@@ -42,11 +43,11 @@ namespace ClassesParty
                 { 
                      if (pos.GetType().Equals(typeof(Home)))
                      {
-                         interes = interessos[pos] + PlusSexe;
+                         interes = this[((Convidat)pos).Nom] + PlusSexe;
                      }
-                     else
+                     else if (pos.GetType().Equals(typeof(Dona)))
                      {
-                         interes = interessos[pos];
+                         interes = this[((Convidat)pos).Nom];
                      }
                 }
             }

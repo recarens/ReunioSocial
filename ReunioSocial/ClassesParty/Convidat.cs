@@ -8,8 +8,10 @@ namespace ClassesParty
 {
     public abstract class Convidat : Persona
     {
+        Dictionary<string,int> simpaties;
         int[] simp;
         int sexe;
+        static int i = 0;
         /// <summary>
         /// Crea un convidat
         /// </summary>
@@ -20,6 +22,7 @@ namespace ClassesParty
         {
             this.simp = simp;
             this.sexe = sexe;
+            simpaties = new Dictionary<string, int>();
         }
         /// <summary>
         /// Crea un convidat
@@ -28,16 +31,27 @@ namespace ClassesParty
         /// <param name="sex">Plus de simpatia sobre el sexe contrari</param>
         public Convidat(string nom, int sexe):base(nom)
         {
-            this.simp = new int[0];
+            this.simp = new int[100];
             this.sexe = sexe;
+            simpaties = new Dictionary<string, int>();
         }
         /// <summary>
         /// Retorna o estableix la simpaties envers a algú
         /// </summary>
         public int this[string nom]
         {
-            get {return 0;}
-            set { simp[0] = (int)value; }
+            get 
+            {
+                nom = nom.ToLower();
+                return this.simpaties[nom];
+            }
+            set 
+            {
+                nom = nom.ToLower();
+                simpaties.Add(nom, value);
+                simp[i] = (int)value;
+                i++;
+            }
         }
         /// <summary>
         /// Retorna o estableix el plus de simpatia envers del sexe contrari

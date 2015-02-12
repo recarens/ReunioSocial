@@ -12,6 +12,8 @@ namespace ClassesParty
         int nDones;
         int nCambrers;
         TaulaPersones tp;
+
+        
         /// <summary>
         /// Crea un escenari donades unes mides
         /// </summary>
@@ -66,6 +68,14 @@ namespace ClassesParty
         public int Cambrers
         { 
             get { return nCambrers;} 
+        }
+
+        /// <summary>
+        /// retorna taula persones
+        /// </summary>
+        public TaulaPersones Tp
+        {
+            get { return tp; }
         }
         /// <summary>
         /// Mou una persona de (filOrig, colOrig) fins a la posicio adjacent(filDesti,colDesti)
