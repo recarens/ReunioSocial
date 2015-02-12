@@ -63,9 +63,9 @@ namespace ClassesParty
         public static double Distancia(Posicio pos1, Posicio pos2)
         {
             double distancia = 0;
-            int numColumnes = Math.Abs(pos1.Fila - pos2.Fila);
-            int numFiles = Math.Abs(pos1.Columna - pos2.Columna);
-            distancia = Math.Sqrt((numColumnes * numColumnes) + (numColumnes * numColumnes));
+
+            distancia = Math.Sqrt((Math.Pow((pos1.Fila - pos2.Fila),2)) + (Math.Pow((pos1.Columna - pos2.Columna),2)));
+
             return distancia;
         }
 

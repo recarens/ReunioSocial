@@ -12,18 +12,7 @@ namespace ClassesParty
         int[] simp;
         int sexe;
         static int i = 0;
-        /// <summary>
-        /// Crea un convidat
-        /// </summary>
-        /// <param name="nom">string que l'identificarà</param>
-        /// <param name="simp">Taula de simpaties</param>
-        /// <param name="sex">Plus de simpatia sobre el sexe contrari</param>
-        public Convidat(string nom, int[] simp, int sexe):base(nom)
-        {
-            this.simp = simp;
-            this.sexe = sexe;
-            simpaties = new Dictionary<string, int>();
-        }
+
         /// <summary>
         /// Crea un convidat
         /// </summary>

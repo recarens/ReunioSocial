@@ -9,16 +9,7 @@ namespace ClassesParty
     public class Dona : Convidat
     {
         Dictionary<Posicio, int> interessos;
-        /// <summary>
-        /// Crea una Dona
-        /// </summary>
-        /// <param name="nom">String que identifica aquesta Dona</param>
-        /// <param name="simpa">Taula de simpaties envers els altres convidats</param>
-        /// <param name="sexe">Plus de simpatia envers convidats del sexe contrari</param>
-        public Dona(string nom, int[] simpa, int sexe) : base(nom, simpa, sexe)
-        {
-            interessos = new Dictionary<Posicio, int>();
-        }
+      
         /// <summary>
         /// Crea una Dona
         /// </summary>

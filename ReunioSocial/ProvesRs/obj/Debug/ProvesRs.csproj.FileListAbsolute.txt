@@ -23,3 +23,6 @@ C:\Users\eric\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\Clas
 C:\Users\eric\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.csprojResolveAssemblyReference.cache
 C:\Users\eric\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.exe
 C:\Users\eric\Documents\GitHub\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.pdb
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ProvesRs\bin\Debug\ProvesRs.exe.config
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.exe
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ProvesRs\obj\Debug\ProvesRs.pdb
