@@ -23,6 +23,8 @@ namespace ReunioSocial
         public MainWindow()
         {
             InitializeComponent();
+            Escenari esc = new Escenari(20,20);
+
         }
     }
 }
