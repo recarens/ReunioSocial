@@ -38,11 +38,11 @@ namespace ClassesParty
                 {
                     if (pos.GetType().Equals(typeof(Dona)))
                     {
-                        interes = this[((Convidat)pos).Nom] + PlusSexe;
+                        interes = base[((Convidat)pos).Nom] + PlusSexe;
                     }
                     else
                     {
-                        interes = this[((Convidat)pos).Nom];
+                        interes = base[((Convidat)pos).Nom];
                     }
                 }
                 else

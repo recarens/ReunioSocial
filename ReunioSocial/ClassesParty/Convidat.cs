@@ -43,7 +43,7 @@ namespace ClassesParty
             get 
             {
                 nom = nom.ToLower();
-                return this.simpaties[nom];
+                return simpaties[nom];
             }
             set 
             {
