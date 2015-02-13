@@ -39,7 +39,7 @@ namespace ProvesRs
 
             string[,] escStrings = esc1.ContingutNoms();
             
-            antonio["maria"] = 2;
+            antonio["maria"] = 5;
             antonio["josep"] = 1;
 
             maria["antonio"] = 5;
