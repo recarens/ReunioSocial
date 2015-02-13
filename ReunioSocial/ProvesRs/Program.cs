@@ -53,6 +53,7 @@ namespace ProvesRs
             Direccio d1 = maria.OnVaig(esc1);
 
             int i = antonio["maria"];
+            Console.WriteLine(maria.Fila + " " + maria.Columna + "        " + antonio.Fila + " " + antonio.Columna);
             for (int a = 0; a < 10; a++)
             {
                 esc1.Cicle();

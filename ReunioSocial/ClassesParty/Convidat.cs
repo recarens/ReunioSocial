@@ -9,7 +9,6 @@ namespace ClassesParty
     public abstract class Convidat : Persona
     {
         Dictionary<string,int> simpaties;
-        int[] simp;
         int sexe;
         static int i = 0;
 
@@ -20,7 +19,6 @@ namespace ClassesParty
         /// <param name="sex">Plus de simpatia sobre el sexe contrari</param>
         public Convidat(string nom, int sexe):base(nom)
         {
-            this.simp = new int[100];
             this.sexe = sexe;
             simpaties = new Dictionary<string, int>();
         }
@@ -38,7 +36,6 @@ namespace ClassesParty
             {
                 nom = nom.ToLower();
                 simpaties.Add(nom, value);
-                simp[i] = (int)value;
                 i++;
             }
         }

@@ -90,7 +90,7 @@ namespace ClassesParty
             if (DestiValid(filDesti, colDesti) && esc[filDesti, colDesti].Buida)
             {
                 esc[filDesti, colDesti] = esc[filOrig, colDesti];
-                esc[filOrig, colDesti] = new Posicio();
+                esc[filOrig, colOrig] = new Posicio();
             }
         }
         /// <summary>
@@ -257,7 +257,7 @@ namespace ClassesParty
                     if (this.DestiValid(p.Fila, p.Columna - 1))
                     {
                         this.Moure(p.Fila, p.Columna, p.Fila, p.Columna - 1);
-                        p.Fila = p.Fila + 1;
+                        p.Columna = p.Columna - 1;
                     }
                 }
                 else
