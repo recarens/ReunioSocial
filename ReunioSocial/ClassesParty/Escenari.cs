@@ -109,7 +109,7 @@ namespace ClassesParty
         public bool DestiValid(int fil, int col)
         {
             bool destiValid = false;
-            if (fil < esc.GetLength(0) && fil >= 0 && col >= 0 && col < esc.GetLength(1))
+            if (fil < esc.GetLength(0) && fil >= 0 && col >= 0 && col < esc.GetLength(1) && this[fil,col].Buida)
                 destiValid = true;
             return destiValid;
 
