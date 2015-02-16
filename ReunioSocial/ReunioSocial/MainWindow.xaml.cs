@@ -23,6 +23,43 @@ namespace ReunioSocial
         public MainWindow()
         {
             InitializeComponent();
+            Escenari esc = new Escenari(10,10);
+            grdEscencari.ShowGridLines = true;
+            grdGraella.ShowGridLines = true;
+            ColumnDefinition colDef;
+            RowDefinition rowDef;
+            //columnes grid Escenari
+            for(int i = 0; i < esc.Columnes; i++)
+            {
+                colDef = new ColumnDefinition();
+                grdEscencari.ColumnDefinitions.Add(colDef);
+            }
+            //files grid Escenari
+            for (int i = 0; i < esc.Files; i++)
+            {
+                rowDef = new RowDefinition();
+                grdEscencari.RowDefinitions.Add(rowDef);
+            }
+
+            //Columna de noms
+            colDef = new ColumnDefinition();
+            grdGraella.ColumnDefinitions.Add(colDef);
+            //columnes grid Graella
+            for (int i = 0; i < esc.Tp.NumPersones; i++)
+            {
+                colDef = new ColumnDefinition();
+                grdGraella.ColumnDefinitions.Add(colDef);
+            }
+
+            //Fila de noms
+            rowDef = new RowDefinition();
+            grdGraella.RowDefinitions.Add(rowDef);
+            //files grid Graella
+            for (int i = 0; i < esc.Tp.NumPersones; i++)
+            {
+                rowDef = new RowDefinition();
+                grdGraella.RowDefinitions.Add(rowDef);
+            }
         }
     }
 }
