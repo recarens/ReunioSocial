@@ -16,21 +16,21 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Margin="10">Numero de cambrers</Label>
-        <Slider x:Name="sldCambrers" Maximum="10" Minimum="10" Grid.Row="0" Grid.Column="1" Margin="10"/>
+        <Slider x:Name="sldCambrers" Maximum="10" Minimum="10" Grid.Row="0" Grid.Column="1" Margin="10" SmallChange="1" LargeChange="2"/>
 
         <Label Margin="10" Grid.Row="1" Grid.Column="0">Numero de homes</Label>
-        <Slider x:Name="sldHomes" Maximum="10" Minimum="10" Margin="10" Grid.Row="1" Grid.Column="1"/>
+        <Slider x:Name="sldHomes" Maximum="10" Minimum="10" Margin="10" Grid.Row="1" Grid.Column="1" SmallChange="1" LargeChange="2"/>
 
 
         <Label Margin="10" Grid.Row="2" Grid.Column="0">Numero de dones</Label>
-        <Slider x:Name="sldDones" Maximum="10" Minimum="10" Margin="10" Grid.Row="2" Grid.Column="1"/>
+        <Slider x:Name="sldDones" Maximum="10" Minimum="10" Margin="10" Grid.Row="2" Grid.Column="1" LargeChange="2" SmallChange="1"/>
 
 
         <Label Margin="10" Grid.Row="3" Grid.Column="0">Numero de files</Label>
-        <Slider x:Name="sldFiles" Maximum="10" Minimum="10" Margin="10" Grid.Row="3" Grid.Column="1"/>
+        <Slider x:Name="sldFiles" Maximum="10" Minimum="10" Margin="10" Grid.Row="3" Grid.Column="1" SmallChange="1" LargeChange="2"/>
 
 
         <Label Margin="10" Grid.Row="4" Grid.Column="0">Numero de columnes</Label>
-        <Slider x:Name="sldColumnes" Maximum="10" Minimum="10" Margin="10" Grid.Row="4" Grid.Column="1"/>
+        <Slider x:Name="sldColumnes" Maximum="10" Minimum="10" Margin="10" Grid.Row="4" Grid.Column="1" LargeChange="2" SmallChange="1"/>
         </Grid>
 </Window>
