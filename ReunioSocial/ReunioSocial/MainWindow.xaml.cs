@@ -20,14 +20,17 @@ namespace ReunioSocial
     /// </summary>
     public partial class MainWindow : Window
     {
+        Escenari esc;
         public MainWindow()
         {
             InitializeComponent();
-            Escenari esc = new Escenari(10,10);
+            esc = new Escenari(10,10);
             grdEscencari.ShowGridLines = true;
             grdGraella.ShowGridLines = true;
             ColumnDefinition colDef;
             RowDefinition rowDef;
+
+            #region Columnes i Files
             //columnes grid Escenari
             for(int i = 0; i < esc.Columnes; i++)
             {
@@ -60,6 +63,31 @@ namespace ReunioSocial
                 rowDef = new RowDefinition();
                 grdGraella.RowDefinitions.Add(rowDef);
             }
+            #endregion
+        }
+
+        /// <summary>
+        /// fa un cicle d'events
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCicle_Click(object sender, RoutedEventArgs e)
+        {
+            esc.Cicle();
+            PintarEscenari();
+        }
+
+        /// <summary>
+        /// pinta l'escenari
+        /// </summary>
+        private void PintarEscenari()
+        {
+
+        }
+
+        private void CrearPersones()
+        {
+            
         }
     }
 }

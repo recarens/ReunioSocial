@@ -1,13 +1,14 @@
 ﻿<Window x:Class="ReunioSocial.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="451.046" Width="757.845">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid x:Name="grdEscencari"  Background="Aqua" Grid.Column="0" Margin="10"/>
-        <Grid x:Name="grdGraella"  Background="Brown" Grid.Column="1" Margin="10"/>
+        <Grid x:Name="grdGraella"  Background="Brown" Grid.Column="1" Margin="10,10,10,76"/>
+        <Button x:Name="btnCicle" Grid.Column="1" Margin="139,371,126,10" Content="Fer cicle" FontSize="20" Click="btnCicle_Click" />
     </Grid>
 </Window>
