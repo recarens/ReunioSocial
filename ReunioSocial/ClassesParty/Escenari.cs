@@ -89,7 +89,7 @@ namespace ClassesParty
         {
             if (DestiValid(filDesti, colDesti) && esc[filDesti, colDesti].Buida)
             {
-                esc[filDesti, colDesti] = esc[filOrig, colDesti];
+                esc[filDesti, colDesti] = esc[filOrig, colOrig];
                 esc[filOrig, colOrig] = new Posicio();
             }
         }
@@ -109,7 +109,7 @@ namespace ClassesParty
         public bool DestiValid(int fil, int col)
         {
             bool destiValid = false;
-            if (fil < esc.GetLength(0) && fil >= 0 && col >= 0 && col < esc.GetLength(1) && this[fil,col].Buida)
+            if (fil < esc.GetLength(0) && fil >= 0 && col >= 0 && col < esc.GetLength(1) && esc[fil,col].Buida)
                 destiValid = true;
             return destiValid;
 
@@ -229,38 +229,27 @@ namespace ClassesParty
             {
                 Direccio d = p.OnVaig(this);
                 if (d == Direccio.Amunt)
-                {
-                    if(this.DestiValid(p.Fila-1,p.Columna))
-                    {
+                {        
                         this.Moure(p.Fila, p.Columna, p.Fila -1, p.Columna);
                         p.Fila = p.Fila - 1;
-                    }
                 }
                 else if (d == Direccio.Avall)
                 {
-                    if (this.DestiValid(p.Fila +1, p.Columna))
-                    {
                         this.Moure(p.Fila, p.Columna, p.Fila + 1, p.Columna);
                         p.Fila = p.Fila +1;
-                    }
+                    
                 }
                 else if (d == Direccio.Dreta)
                 {
-                    if (this.DestiValid(p.Fila, p.Columna + 1))
-                    {
                         this.Moure(p.Fila, p.Columna, p.Fila, p.Columna +1);
                         p.Columna = p.Columna +1;
-                    }
                 }
                 else if (d == Direccio.Esquerra)
                 {
-                    if (this.DestiValid(p.Fila, p.Columna - 1))
-                    {
                         this.Moure(p.Fila, p.Columna, p.Fila, p.Columna - 1);
                         p.Columna = p.Columna - 1;
-                    }
                 }
-                else
+                else if (d == Direccio.Quiet)
                 {
                         this.Moure(p.Fila, p.Columna, p.Fila, p.Columna);
                 }
