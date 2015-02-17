@@ -99,7 +99,7 @@ namespace ReunioSocial
             }
 
             Random r = new Random();
-            int nomRandom, sexe, fila, columna;
+            int nomRandom, sexe, fila, columna, simpatia;
 
             // Generem les dones
             for(int dona = 0; dona < num_dones ; dona++)
@@ -148,6 +148,19 @@ namespace ReunioSocial
                 Grid.SetColumn(persona, h.Columna);
                 Grid.SetRow(persona, h.Fila);
                 grdEscenari.Children.Add(persona);
+            }
+
+            // Assignem les simpaties
+            for (int person = 0; person < esc.Tp.NumPersones; person++)
+            {
+                for (int personaALaLlista = 0; personaALaLlista < esc.Tp.NumPersones; personaALaLlista++)
+                {
+                    if (esc.Tp.ElementAt(person).Nom != esc.Tp.ElementAt(personaALaLlista).Nom)
+                    {
+                        simpatia = r.Next(-5, 6);
+                        // aplicar simpatia per cada persona contra totes les de la llista
+                    }
+                }
             }
         }
 
