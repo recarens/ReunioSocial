@@ -29,7 +29,7 @@ namespace ClassesParty
             {
                 if (((Convidat)pos).EsConvidat())
                 {
-                    if (pos.GetType().Equals(typeof(Dona)))
+                    if (pos is Dona)
                     {
                         interes = base[((Convidat)pos).Nom] + PlusSexe;
                     }

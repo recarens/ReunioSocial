@@ -64,3 +64,5 @@ C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioS
 C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.csproj.GenerateResource.Cache
 C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.exe
 C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.pdb
+C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ConfigEscenari.baml
+C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ConfigEscenari.g.cs

@@ -32,11 +32,11 @@ namespace ClassesParty
             {
                 if(/*((Persona)pos).EsConvidat()*/pos is Convidat)
                 { 
-                     if (pos.GetType().Equals(typeof(Home)))
+                     if (pos is Home)
                      {
                          interes = base[((Convidat)pos).Nom] + PlusSexe;
                      }
-                     else if (pos.GetType().Equals(typeof(Dona)))
+                     else if (pos is Dona)
                      {
                          interes = base[((Convidat)pos).Nom];
                      }

@@ -90,6 +90,8 @@ namespace ClassesParty
             if (DestiValid(filDesti, colDesti) && esc[filDesti, colDesti].Buida)
             {
                 esc[filDesti, colDesti] = esc[filOrig, colOrig];
+                esc[filDesti, colDesti].Fila = filDesti;
+                esc[filDesti, colDesti].Columna = colDesti;
                 esc[filOrig, colOrig] = new Posicio(filOrig,colOrig);
             }
         }
@@ -144,13 +146,13 @@ namespace ClassesParty
         /// <param name="col">Columna on està la persona</param>
         public void buidar(int fil, int col)
         {
-            if (esc[fil, col].GetType().Equals(typeof(Cambrer)))
+            if (esc[fil, col] is Cambrer)
             {
                 nCambrers--;
             }
             else
             {
-                if (esc[fil, col].GetType().Equals(typeof(Home)))
+                if (esc[fil, col] is Home)
                     nHomes--;
                 else
                     nDones--;
@@ -170,9 +172,9 @@ namespace ClassesParty
             {
                 tp.Afegir(pers);
                 esc[pers.Fila, pers.Columna] = pers;
-                if (pers.GetType().Equals(typeof(Home)))
+                if (pers is Home)
                     nHomes++;
-                else if (pers.GetType().Equals(typeof(Dona)))
+                else if (pers is Dona)
                     nDones++;
                 else
                     nCambrers++;

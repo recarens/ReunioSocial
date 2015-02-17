@@ -36,11 +36,11 @@ namespace ClassesParty
             {
                 return 0;
             }
-            else if (pos.GetType().Equals(typeof(Cambrer)))
+            else if (pos is Cambrer)
             {
                 return -1;
             }
-            else if (pos.GetType().Equals(typeof(Convidat)))
+            else if (pos is Convidat)
             {
                 return 1;
             }

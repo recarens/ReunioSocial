@@ -74,76 +74,75 @@ namespace ClassesParty
         /// <param name="esc">Escenari on esta situada la persona</param>
         /// <returns>Una de les 5 possibles direccions (Quiet, Amunt, Avall, Dreta, Esquerra</returns>
         public Direccio OnVaig(Escenari esc)
-         {
-         List<double> atraccions = new List<double>();
-         List<Direccio> d = new List<Direccio>();
+        {
+            
+            List<double> atraccions = new List<double>();
+            List<Direccio> d = new List<Direccio>();
 
-         // inicialitzar direcció = quiet
-         double amunt = -5;
-         double dreta = -5;
-         double esquerra = -5;
-         double avall = -5;
-         double quiet = -5;
-         double resultat;
-         Random r = new Random();
-         // Calculem totes les atraccions
-         if (esc.DestiValid(this.Fila - 1, this.Columna))
-         {
-             amunt = Atraccio(this.Fila - 1, this.Columna, esc);
-             atraccions.Add(amunt);
-             this.Fila--;
-         }
-         if (esc.DestiValid(this.Fila, this.Columna + 1))
-         {
-             dreta = Atraccio(this.Fila, this.Columna + 1, esc);
-             atraccions.Add(dreta);
-             this.Columna++;
-         }
-         if(esc.DestiValid(this.Fila + 1, this.Columna))
-         {
-             avall = Atraccio(this.Fila + 1, this.Columna, esc);
-             atraccions.Add(esquerra);
-             this.Fila++;
-         }
-         if (esc.DestiValid(this.Fila, this.Columna - 1))
-         {
-             esquerra = Atraccio(this.Fila, this.Columna - 1, esc);
-             atraccions.Add(avall);
-             this.Columna--;
-         }
-         if (esc.DestiValid(this.Fila, this.Columna))
-         {
-             quiet = Atraccio(this.Fila, this.Columna, esc);
-             atraccions.Add(quiet);
-         }
+            // inicialitzar direcció = quiet
+            Direccio direccio = Direccio.Quiet;
 
-         resultat = atraccions.Max();
+            double amunt = 0;
+            double dreta = 0;
+            double esquerra = 0;
+            double avall = 0;
+            double quiet = 0;
+            double resultat;
+            Random r = new Random();
+            // Calculem totes les atraccions
+            if (esc.DestiValid(this.Fila - 1, this.Columna))
+            {
+                amunt = Atraccio(this.Fila - 1, this.Columna, esc);
+                atraccions.Add(amunt);
+            }
+            if (esc.DestiValid(this.Fila, this.Columna + 1))
+            {
+                dreta = Atraccio(this.Fila, this.Columna + 1, esc);
+                atraccions.Add(dreta);
+            }
+            if (esc.DestiValid(this.Fila + 1, this.Columna))
+            {
+                avall = Atraccio(this.Fila + 1, this.Columna, esc);
+                atraccions.Add(esquerra);
+            }
+            if (esc.DestiValid(this.Fila, this.Columna - 1))
+            {
+                esquerra = Atraccio(this.Fila, this.Columna - 1, esc);
+                atraccions.Add(avall);
+            }
+            if (esc.DestiValid(this.Fila, this.Columna))
+            {
+                quiet = Atraccio(this.Fila, this.Columna, esc);
+                atraccions.Add(quiet);
+            }
 
-         if (resultat == amunt)
-         {
-            d.Add(Direccio.Amunt);
-         }
-         if (resultat == avall)
-         {
-            d.Add(Direccio.Avall);
-         }
-         if (resultat == dreta)
-         {
-            d.Add(Direccio.Dreta);
-         }
-         if (resultat == esquerra)
-         {
-            d.Add(Direccio.Esquerra);
-         }
-         if (resultat == quiet)
-         {
-            d.Add(Direccio.Quiet);
-         }
+            resultat = atraccions.Max();
 
-         int direccio = r.Next(0, d.Count);
-         return d[direccio];
+            if (resultat == amunt)
+            {
+                d.Add(Direccio.Amunt);
+            }
+            if (resultat == avall)
+            {
+                d.Add(Direccio.Avall);
+            }
+            if (resultat == dreta)
+            {
+                d.Add(Direccio.Dreta);
+            }
+            if (resultat == esquerra)
+            {
+                d.Add(Direccio.Esquerra);
+            }
+            if (resultat == quiet)
+            {
+                d.Add(Direccio.Quiet);
+            }
 
-         }
+            int direccio = r.Next(0, d.Count);
+            return d[direccio];
+
+        }
         /// <summary>
         /// Interès de la persona sobre una determinada posició
         /// </summary>

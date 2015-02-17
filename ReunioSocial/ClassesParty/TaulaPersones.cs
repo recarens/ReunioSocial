@@ -9,7 +9,6 @@ namespace ClassesParty
     public class TaulaPersones:IEnumerable<Persona>
     {
         Dictionary<string,Persona> taulaPersones;
-        List<string> claus;
 
         
         /// <summary>
@@ -18,7 +17,6 @@ namespace ClassesParty
         public TaulaPersones()
         {
             taulaPersones = new Dictionary<string, Persona>();
-            claus = new List<string>();
         }
         /// <summary>
         /// Assigna o obté una persona de la taula
@@ -33,7 +31,6 @@ namespace ClassesParty
             set
             {
                 taulaPersones.Add(nom.ToString().ToLower(),(Persona)value);
-                claus.Add(nom.ToString().ToLower());
             }
 
         }
@@ -49,14 +46,6 @@ namespace ClassesParty
         }
 
         /// <summary>
-        /// Obtè les claus del diccionari
-        /// </summary>
-        public List<string> Claus
-        {
-            get { return claus; }
-        }
-
-        /// <summary>
         /// Afegeix una persona a la taula
         /// </summary>
         /// <param name="conv">Convidat a afegir</param>
@@ -65,12 +54,10 @@ namespace ClassesParty
             if (pers.EsConvidat())
             {
                 taulaPersones.Add(pers.Nom.ToString().ToLower(), pers);
-                claus.Add(pers.Nom.ToString().ToLower());
             }
             else
             {
                 taulaPersones.Add(((Cambrer)pers).NomC.ToString().ToLower(), pers);
-                claus.Add(((Cambrer)pers).NomC.ToString().ToLower());
             }
             
         }
@@ -83,12 +70,10 @@ namespace ClassesParty
             if (pers.EsConvidat())
             {
                 taulaPersones.Remove(pers.Nom.ToString().ToLower());
-                claus.Remove(pers.Nom.ToString().ToLower());
             }
             else
             {
                 taulaPersones.Remove(((Cambrer)pers).NomC.ToString().ToLower());
-                claus.Remove(((Cambrer)pers).NomC.ToString().ToLower());
             }
         }
         /// <summary>
@@ -103,13 +88,7 @@ namespace ClassesParty
 
         public IEnumerator<Persona> GetEnumerator()
         {
-            List<Persona> llista = new List<Persona>();
-            for (int i = 0; i < NumPersones;i++)
-            {
-                llista.Add(taulaPersones[claus[i]]);
-            }
-                foreach (Persona tc in llista)
-                    yield return tc;
+            return taulaPersones.Values.GetEnumerator();
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
