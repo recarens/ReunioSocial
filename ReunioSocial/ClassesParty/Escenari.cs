@@ -230,40 +230,23 @@ namespace ClassesParty
                 Direccio d = p.OnVaig(this);
                 if (d == Direccio.Amunt)
                 {
-                    if (DestiValid(p.Fila - 1, p.Columna))
-                    {
-                        this.Moure(p.Fila, p.Columna, p.Fila - 1, p.Columna);
-                        p.Fila = p.Fila - 1;
-                    }
+                    this.Moure(p.Fila, p.Columna, p.Fila - 1, p.Columna);
                 }
                 else if (d == Direccio.Avall)
                 {
-                    if(DestiValid(p.Fila + 1, p.Columna))
-                    {
-                        this.Moure(p.Fila, p.Columna, p.Fila + 1, p.Columna);
-                        p.Fila = p.Fila +1;
-                    }
+                    this.Moure(p.Fila, p.Columna, p.Fila + 1, p.Columna);
                 }
                 else if (d == Direccio.Dreta)
                 {
-                    if (DestiValid(p.Fila, p.Columna + 1))
-                    {
-                        this.Moure(p.Fila, p.Columna, p.Fila, p.Columna + 1);
-                        p.Columna = p.Columna + 1;
-                    }
+                     this.Moure(p.Fila, p.Columna, p.Fila, p.Columna + 1);
                 }
                 else if (d == Direccio.Esquerra)
                 {
-                    if (DestiValid(p.Fila, p.Columna - 1))
-                    {
-                        this.Moure(p.Fila, p.Columna, p.Fila, p.Columna - 1);
-                        p.Columna = p.Columna - 1;
-                    }
+                     this.Moure(p.Fila, p.Columna, p.Fila, p.Columna - 1);
                 }
                 else if (d == Direccio.Quiet)
                 {
-                        //desti valid?
-                        this.Moure(p.Fila, p.Columna, p.Fila, p.Columna);
+                    this.Moure(p.Fila, p.Columna, p.Fila, p.Columna);
                 }
             }
         }

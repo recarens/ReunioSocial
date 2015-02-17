@@ -74,56 +74,74 @@ namespace ClassesParty
         /// <param name="esc">Escenari on esta situada la persona</param>
         /// <returns>Una de les 5 possibles direccions (Quiet, Amunt, Avall, Dreta, Esquerra</returns>
         public Direccio OnVaig(Escenari esc)
-        {
-            List<double> atraccions = new List<double>();
-            List<Direccio> d = new List<Direccio>();
-            double amunt;
-            double dreta;
-            double esquerra;
-            double avall;
-            double quiet;
-            double resultat;
-            Random r = new Random();
-            // Calculem totes les atraccions
-            amunt = Atraccio(this.Fila - 1, this.Columna, esc);
-            dreta = Atraccio(this.Fila, this.Columna + 1, esc);
-            avall = Atraccio(this.Fila + 1, this.Columna, esc);
-            esquerra = Atraccio(this.Fila, this.Columna - 1, esc);
-            quiet = Atraccio(this.Fila, this.Columna, esc);
+         {
+         List<double> atraccions = new List<double>();
+         List<Direccio> d = new List<Direccio>();
+         double amunt = -5;
+         double dreta = -5;
+         double esquerra = -5;
+         double avall = -5;
+         double quiet = -5;
+         double resultat;
+         Random r = new Random();
+         // Calculem totes les atraccions
+         if (esc.DestiValid(this.Fila - 1, this.Columna))
+         {
+         amunt = Atraccio(this.Fila - 1, this.Columna, esc);
+         atraccions.Add(amunt);
+         this.Fila--;
+         }
+         if (esc.DestiValid(this.Fila, this.Columna + 1))
+         {
+         dreta = Atraccio(this.Fila, this.Columna + 1, esc);
+         atraccions.Add(dreta);
+         this.Columna++;
+         }
+         if(esc.DestiValid(this.Fila + 1, this.Columna))
+         {
+         avall = Atraccio(this.Fila + 1, this.Columna, esc);
+         atraccions.Add(esquerra);
+         this.Fila++;
+         }
+         if (esc.DestiValid(this.Fila, this.Columna - 1))
+         {
+         esquerra = Atraccio(this.Fila, this.Columna - 1, esc);
+         atraccions.Add(avall);
+         this.Columna--;
+         }
+         if (esc.DestiValid(this.Fila, this.Columna))
+         {
+         quiet = Atraccio(this.Fila, this.Columna, esc);
+         atraccions.Add(quiet);
+         }
 
-            atraccions.Add(amunt);
-            atraccions.Add(dreta);
-            atraccions.Add(esquerra);
-            atraccions.Add(avall);
-            atraccions.Add(quiet);
+         resultat = atraccions.Max();
 
-            resultat = atraccions.Max();
+         if (resultat == amunt)
+         {
+         d.Add(Direccio.Amunt);
+         }
+         if (resultat == avall)
+         {
+         d.Add(Direccio.Avall);
+         }
+         if (resultat == dreta)
+         {
+         d.Add(Direccio.Dreta);
+         }
+         if (resultat == esquerra)
+         {
+         d.Add(Direccio.Esquerra);
+         }
+         if (resultat == quiet)
+         {
+         d.Add(Direccio.Quiet);
+         }
 
-            if (resultat == amunt)
-            {
-                d.Add(Direccio.Amunt);
-            }
-            if (resultat == avall)
-            {
-                d.Add(Direccio.Avall);
-            }
-            if (resultat == dreta)
-            {
-                d.Add(Direccio.Dreta);
-            }
-            if (resultat == esquerra)
-            {
-                d.Add(Direccio.Esquerra);
-            }
-            if (resultat == quiet)
-            {
-                d.Add(Direccio.Quiet);
-            }
+         int direccio = r.Next(0, d.Count);
+         return d[direccio];
 
-            int direccio = r.Next(0, d.Count);
-            return d[direccio];
-
-        }
+         }
         /// <summary>
         /// Interès de la persona sobre una determinada posició
         /// </summary>
