@@ -10,9 +10,11 @@ namespace ProvesRs
     {
         private const int NUM_FILES_ESCENARI = 20;
         private const int NUM_COLUMNES_ESCENARI = 20;
+        
         static void Main(string[] args)
         {
             Escenari esc1 = new Escenari(NUM_FILES_ESCENARI, NUM_COLUMNES_ESCENARI);
+
             Home antonio = new Home("antonio", 1);
             Convidat maria = new Dona("maria", 2);
             Home josep = new Home("josep", 2);
