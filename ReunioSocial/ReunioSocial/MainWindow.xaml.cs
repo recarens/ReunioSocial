@@ -69,20 +69,48 @@ namespace ReunioSocial
 
         private void btnInicia_Click(object sender, RoutedEventArgs e)
         {
+            
 
-            iniciaGraella();
+            //iniciaGraella();
             iniciaEscenari();
 
+            
+
+            ////Columna de noms
+            //colDef = new ColumnDefinition();
+            //grdGraella.ColumnDefinitions.Add(colDef);
+            ////columnes grid Graella
+            //for (int i = 0; i < esc.Tp.NumPersones; i++)
+            //{
+            //    colDef = new ColumnDefinition();
+            //    grdGraella.ColumnDefinitions.Add(colDef);
+            //}
+
+            ////Fila de noms
+            //rowDef = new RowDefinition();
+            //grdGraella.RowDefinitions.Add(rowDef);
+            ////files grid Graella
+            //for (int i = 0; i < esc.Tp.NumPersones; i++)
+            //{
+            //    rowDef = new RowDefinition();
+            //    grdGraella.RowDefinitions.Add(rowDef);
+            //}
+
+            //grdEscenari.ShowGridLines = true;
+            //grdGraella.ShowGridLines = true;
+        }
+
+        private void iniciaEscenari()
+        {
             grdEscenari.ColumnDefinitions.Clear();
             grdEscenari.RowDefinitions.Clear();
 
             grdGraella.ColumnDefinitions.Clear();
             grdGraella.RowDefinitions.Clear();
-            
+
             ColumnDefinition colDef;
             RowDefinition rowDef;
 
-            #region Columnes i Files
             //columnes grid Escenari
             for (int i = 0; i < num_columnes; i++)
             {
@@ -96,47 +124,35 @@ namespace ReunioSocial
                 grdEscenari.RowDefinitions.Add(rowDef);
             }
 
-            //Columna de noms
-            colDef = new ColumnDefinition();
-            grdGraella.ColumnDefinitions.Add(colDef);
-            //columnes grid Graella
-            for (int i = 0; i < esc.Tp.NumPersones; i++)
-            {
-                colDef = new ColumnDefinition();
-                grdGraella.ColumnDefinitions.Add(colDef);
-            }
-
-            //Fila de noms
-            rowDef = new RowDefinition();
-            grdGraella.RowDefinitions.Add(rowDef);
-            //files grid Graella
-            for (int i = 0; i < esc.Tp.NumPersones; i++)
-            {
-                rowDef = new RowDefinition();
-                grdGraella.RowDefinitions.Add(rowDef);
-            }
-
-            grdEscenari.ShowGridLines = true;
-            grdGraella.ShowGridLines = true;
-            #endregion
-        }
-
-        private void iniciaGraella()
-        {
             Random r = new Random();
             int nomRandom, sexe, fila, columna;
 
+            // Generem les dones
             for(int dona = 0; dona < num_dones ; dona++)
             {
+                // generem valors aleatòris
                 fila = r.Next(0, num_files);
                 columna = r.Next(0, num_columnes);
                 nomRandom = r.Next(0,nomsDones.Count());
                 sexe = r.Next(0,4);
                 
-                Persona p = new Dona(nomsDones[nomRandom],sexe);
-                esc.posar(p);
-
+                // Creem una nova dona i la col·loquem a l'escenari
+                Dona d = new Dona(nomsDones[nomRandom],sexe);
+                d.Columna = columna;
+                d.Fila = fila;
+                esc.posar(d);
             }
+
+            // Generem els homes
+
+        }
+
+        private void iniciaGraella()
+        {
+            
+
+
+
         }
 
 
