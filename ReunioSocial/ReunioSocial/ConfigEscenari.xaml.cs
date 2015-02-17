@@ -43,27 +43,27 @@ namespace ReunioSocial
 
         private void sldCambrers_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            tbnumCambrers.Text = sldCambrers.Value.ToString();
+            tbnumCambrers.Text = Convert.ToString((int)sldCambrers.Value);
         }
 
         private void sldHomes_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            tbnumHomes.Text = sldHomes.Value.ToString();
+            tbnumHomes.Text = Convert.ToString((int)sldHomes.Value);
         }
 
         private void sldDones_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            tbnumDones.Text = sldDones.Value.ToString();
+            tbnumDones.Text = Convert.ToString((int)sldDones.Value);
         }
 
         private void sldFiles_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            tbnumFiles.Text = sldFiles.Value.ToString();
+            tbnumFiles.Text = Convert.ToString((int)sldFiles.Value);
         }
 
         private void sldColumnes_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            tbnumColumnes.Text = sldColumnes.Value.ToString();
+            tbnumColumnes.Text = Convert.ToString((int)sldColumnes.Value);
         }
     }
 }

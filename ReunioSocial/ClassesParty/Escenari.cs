@@ -166,7 +166,7 @@ namespace ClassesParty
         /// <param name="pers">Persona a afegir</param>
         public void posar(Persona pers)
         {
-            if (!pers.Buida)
+            if (esc[pers.Fila, pers.Columna].Buida)
             {
                 tp.Afegir(pers);
                 esc[pers.Fila, pers.Columna] = pers;

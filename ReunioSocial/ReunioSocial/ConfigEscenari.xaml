@@ -23,7 +23,7 @@
         <TextBlock x:Name="tbnumColumnes" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Margin="220,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
         <Label Grid.Row="0" Grid.Column="0" Margin="10">Numero de cambrers</Label>
-        <Slider x:Name="sldCambrers" Maximum="10" Minimum="1" Grid.Row="0" Grid.Column="1" Margin="10,10,83,10" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldCambrers_ValueChanged"/>
+        <Slider x:Name="sldCambrers" Maximum="10" Minimum="1" Grid.Row="0" Grid.Column="1" Margin="10,10,83,10" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldCambrers_ValueChanged" Interval="1" IsSnapToTickEnabled="True"/>
 
         <Label Margin="10" Grid.Row="1" Grid.Column="0">Numero de homes</Label>
         <Slider x:Name="sldHomes" Maximum="10" Minimum="1" Margin="10,10,83,10" Grid.Row="1" Grid.Column="1" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldHomes_ValueChanged"/>
@@ -42,6 +42,5 @@
         
         <Button x:Name="btnAcceptar" Grid.ColumnSpan="2" Content="Acceptar" HorizontalAlignment="Left" Margin="214,22,0,0" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="btnAcceptar_Click"/>
 
-        
     </Grid>
 </Window>
