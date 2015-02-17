@@ -80,7 +80,7 @@ namespace ClassesParty
             List<Direccio> d = new List<Direccio>();
 
             // inicialitzar direcció = quiet
-            Direccio direccio = Direccio.Quiet;
+            //Direccio direccio = Direccio.Quiet;
 
             double amunt = 0;
             double dreta = 0;
@@ -96,25 +96,23 @@ namespace ClassesParty
                 atraccions.Add(amunt);
             }
             if (esc.DestiValid(this.Fila, this.Columna + 1))
-            {
+
                 dreta = Atraccio(this.Fila, this.Columna + 1, esc);
-                atraccions.Add(dreta);
-            }
+
             if (esc.DestiValid(this.Fila + 1, this.Columna))
-            {
                 avall = Atraccio(this.Fila + 1, this.Columna, esc);
-                atraccions.Add(esquerra);
-            }
+
             if (esc.DestiValid(this.Fila, this.Columna - 1))
-            {
                 esquerra = Atraccio(this.Fila, this.Columna - 1, esc);
-                atraccions.Add(avall);
-            }
+
             if (esc.DestiValid(this.Fila, this.Columna))
-            {
-                quiet = Atraccio(this.Fila, this.Columna, esc);
-                atraccions.Add(quiet);
-            }
+                quiet = Atraccio(this.Fila, this.Columna, esc);     
+
+            
+            atraccions.Add(quiet);
+            atraccions.Add(avall);
+            atraccions.Add(esquerra);
+            atraccions.Add(dreta);
 
             resultat = atraccions.Max();
 
