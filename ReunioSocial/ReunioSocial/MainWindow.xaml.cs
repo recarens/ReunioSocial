@@ -69,55 +69,29 @@ namespace ReunioSocial
 
         private void btnInicia_Click(object sender, RoutedEventArgs e)
         {
-            
-
-            //iniciaGraella();
             iniciaEscenari();
-
-            
-
-            ////Columna de noms
-            //colDef = new ColumnDefinition();
-            //grdGraella.ColumnDefinitions.Add(colDef);
-            ////columnes grid Graella
-            //for (int i = 0; i < esc.Tp.NumPersones; i++)
-            //{
-            //    colDef = new ColumnDefinition();
-            //    grdGraella.ColumnDefinitions.Add(colDef);
-            //}
-
-            ////Fila de noms
-            //rowDef = new RowDefinition();
-            //grdGraella.RowDefinitions.Add(rowDef);
-            ////files grid Graella
-            //for (int i = 0; i < esc.Tp.NumPersones; i++)
-            //{
-            //    rowDef = new RowDefinition();
-            //    grdGraella.RowDefinitions.Add(rowDef);
-            //}
-
-            //grdEscenari.ShowGridLines = true;
-            //grdGraella.ShowGridLines = true;
+            iniciaGraella();
+   
         }
 
         private void iniciaEscenari()
         {
+            esc = new Escenari(num_files, num_columnes);
             grdEscenari.ColumnDefinitions.Clear();
             grdEscenari.RowDefinitions.Clear();
-
-            grdGraella.ColumnDefinitions.Clear();
-            grdGraella.RowDefinitions.Clear();
+            grdEscenari.Children.Clear();
 
             ColumnDefinition colDef;
             RowDefinition rowDef;
+            TextBlock persona;
 
-            //columnes grid Escenari
+            // columnes grid Escenari
             for (int i = 0; i < num_columnes; i++)
             {
                 colDef = new ColumnDefinition();
                 grdEscenari.ColumnDefinitions.Add(colDef);
             }
-            //files grid Escenari
+            // files grid Escenari
             for (int i = 0; i < num_files; i++)
             {
                 rowDef = new RowDefinition();
@@ -131,27 +105,111 @@ namespace ReunioSocial
             for(int dona = 0; dona < num_dones ; dona++)
             {
                 // generem valors aleatòris
-                fila = r.Next(0, num_files);
-                columna = r.Next(0, num_columnes);
-                nomRandom = r.Next(0,nomsDones.Count());
+                fila = r.Next(0, num_files-1);
+                columna = r.Next(0, num_columnes-1);
+                //nomRandom = r.Next(0,nomsDones.Count());
                 sexe = r.Next(0,4);
                 
                 // Creem una nova dona i la col·loquem a l'escenari
-                Dona d = new Dona(nomsDones[nomRandom],sexe);
+                Dona d = new Dona(nomsDones[dona],sexe);
                 d.Columna = columna;
                 d.Fila = fila;
                 esc.posar(d);
+
+                persona = new TextBlock();
+                persona.FontSize = 14;
+                persona.FontWeight = FontWeights.Bold;
+                persona.Text = d.Nom;
+                Grid.SetColumn(persona, d.Columna);
+                Grid.SetRow(persona, d.Fila);
+                grdEscenari.Children.Add(persona);
+
             }
 
             // Generem els homes
+            for (int home = 0; home < num_homes; home++)
+            {
+                // generem valors aleatòris
+                fila = r.Next(0, num_files - 1);
+                columna = r.Next(0, num_columnes - 1);
+                //nomRandom = r.Next(0, nomsHomes.Count());
+                sexe = r.Next(0, 4);
 
+                // Creem un nou home i la col·loquem a l'escenari
+                Home h = new Home(nomsHomes[home], sexe);
+                h.Columna = columna;
+                h.Fila = fila;
+                esc.posar(h);
+
+                persona = new TextBlock();
+                persona.FontSize = 14;
+                persona.FontWeight = FontWeights.Bold;
+                persona.Text = h.Nom;
+                Grid.SetColumn(persona, h.Columna);
+                Grid.SetRow(persona, h.Fila);
+                grdEscenari.Children.Add(persona);
+            }
         }
 
         private void iniciaGraella()
         {
+            grdGraella.ColumnDefinitions.Clear();
+            grdGraella.RowDefinitions.Clear();
+            grdGraella.Children.Clear();
+
+            ColumnDefinition colDef;
+            RowDefinition rowDef;
+            TextBlock nomPersona, simpatiaPersona;
+
+            ////Columna de noms
+            colDef = new ColumnDefinition();
+            grdGraella.ColumnDefinitions.Add(colDef);
+            //columnes grid Graella
+            for (int i = 0; i < esc.Tp.NumPersones; i++)
+            {
+                colDef = new ColumnDefinition();
+
+                grdGraella.ColumnDefinitions.Add(colDef);
+
+                // Creem l'element que mostrarà el nom de la persona
+                nomPersona = new TextBlock();
+                nomPersona.Text = esc.Tp.ElementAt(i).Nom;
+                nomPersona.FontSize = 14;
+                nomPersona.FontWeight = FontWeights.Bold;
+                nomPersona.Foreground = new SolidColorBrush(Colors.Black);
+                nomPersona.VerticalAlignment = VerticalAlignment.Top;
+                nomPersona.HorizontalAlignment = HorizontalAlignment.Center;
+                Grid.SetRow(nomPersona, 0);
+                Grid.SetColumn(nomPersona, i+1);
+                grdGraella.Children.Add(nomPersona);
+
+            }
+
+            //Fila de noms
+            rowDef = new RowDefinition();
+            grdGraella.RowDefinitions.Add(rowDef);
+            //files grid Graella
+            for (int i = 0; i < esc.Tp.NumPersones; i++)
+            {
+                rowDef = new RowDefinition();
+                grdGraella.RowDefinitions.Add(rowDef);
+
+                nomPersona = new TextBlock();
+                nomPersona.Text = esc.Tp.ElementAt(i).Nom;
+                nomPersona.FontSize = 14;
+                nomPersona.FontWeight = FontWeights.Bold;
+                nomPersona.Foreground = new SolidColorBrush(Colors.Black);
+                nomPersona.VerticalAlignment = VerticalAlignment.Center;
+                nomPersona.HorizontalAlignment = HorizontalAlignment.Center;
+                Grid.SetRow(nomPersona, i+1);
+                Grid.SetColumn(nomPersona, 0);
+                grdGraella.Children.Add(nomPersona);
+            }
+
+            grdEscenari.ShowGridLines = true;
+            grdGraella.ShowGridLines = true;
+
             
-
-
 
         }
 

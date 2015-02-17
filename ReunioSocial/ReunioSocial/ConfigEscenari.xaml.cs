@@ -38,6 +38,7 @@ namespace ReunioSocial
             m.Num_cambrers = (int)sldCambrers.Value;
             m.Num_files = (int)sldFiles.Value;
             m.Num_columnes = (int)sldColumnes.Value;
+            this.Close(); 
         }
 
 
