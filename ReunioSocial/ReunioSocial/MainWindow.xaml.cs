@@ -66,7 +66,11 @@ namespace ReunioSocial
             configura.ShowDialog();
         }
 
-
+        /// <summary>
+        /// crida els metodes inicia Escenari i Graella
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInicia_Click(object sender, RoutedEventArgs e)
         {
             iniciaEscenari();
@@ -74,6 +78,10 @@ namespace ReunioSocial
    
         }
 
+
+        /// <summary>
+        /// inicia un escenari amb files, columnes, homes dones etc...
+        /// </summary>
         private void iniciaEscenari()
         {
             esc = new Escenari(num_files, num_columnes);
