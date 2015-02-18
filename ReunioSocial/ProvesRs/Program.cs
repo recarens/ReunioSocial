@@ -34,7 +34,6 @@ namespace ProvesRs
             esc1.posar(maria);
             antonio.Fila = 1; antonio.Columna = 6;
             esc1.posar(antonio);
-            esc1.posar(josep);
             //Console.WriteLine(c1.Nom);
 
             //Direccio direccio = c1.OnVaig(esc1);
@@ -46,9 +45,6 @@ namespace ProvesRs
 
             maria["antonio"] = 5;
             maria["josep"] = 1;
-
-            josep["antonio"] = 3;
-            josep["maria"] = -3;
 
 
             Direccio d = antonio.OnVaig(esc1);

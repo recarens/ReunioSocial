@@ -96,24 +96,24 @@ namespace ClassesParty
                 atraccions.Add(amunt);
             }
             if (esc.DestiValid(this.Fila, this.Columna + 1))
-
+            {
                 dreta = Atraccio(this.Fila, this.Columna + 1, esc);
-
+                atraccions.Add(dreta);
+            }
             if (esc.DestiValid(this.Fila + 1, this.Columna))
+            {
                 avall = Atraccio(this.Fila + 1, this.Columna, esc);
-
+                atraccions.Add(avall);
+            }
             if (esc.DestiValid(this.Fila, this.Columna - 1))
+            {
                 esquerra = Atraccio(this.Fila, this.Columna - 1, esc);
+                atraccions.Add(esquerra);
+            }
 
-            if (esc.DestiValid(this.Fila, this.Columna))
-                quiet = Atraccio(this.Fila, this.Columna, esc);     
-
-            
+            quiet = Atraccio(this.Fila, this.Columna, esc);
             atraccions.Add(quiet);
-            atraccions.Add(avall);
-            atraccions.Add(esquerra);
-            atraccions.Add(dreta);
-
+            
             resultat = atraccions.Max();
 
             if (resultat == amunt)
