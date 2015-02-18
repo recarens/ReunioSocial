@@ -22,6 +22,7 @@ namespace ReunioSocial
     {
         private int num_homes;
         private int num_dones;
+        private int num_convidats;
         private int num_cambrers;
         private int num_files = 0;
         private int num_columnes = 0;
@@ -158,29 +159,27 @@ namespace ReunioSocial
                 grdEscenari.Children.Add(persona);
             }
 
-            //// Generem els cambrers
-            //for (int home = 0; home < num_homes; home++)
-            //{
-            //    // generem valors aleatòris
-            //    fila = r.Next(0, num_files - 1);
-            //    columna = r.Next(0, num_columnes - 1);
-            //    //nomRandom = r.Next(0, nomsHomes.Count());
-            //    sexe = r.Next(0, 4);
+            // Generem els cambrers
+            for (int cambrer = 0; cambrer < num_cambrers; cambrer++)
+            {
+                // generem valors aleatòris
+                fila = r.Next(0, num_files - 1);
+                columna = r.Next(0, num_columnes - 1);
 
-            //    // Creem un nou home i la col·loquem a l'escenari
-            //    Cambrer c = new Cambrer();
-            //    c.Columna = columna;
-            //    c.Fila = fila;
-            //    esc.posar(c);
+                // Creem un nou home i la col·loquem a l'escenari
+                Cambrer c = new Cambrer();
+                c.Columna = columna;
+                c.Fila = fila;
+                esc.posar(c);
 
-            //    persona = new TextBlock();
-            //    persona.FontSize = 14;
-            //    persona.FontWeight = FontWeights.Bold;
-            //    persona.Text = "*";
-            //    Grid.SetColumn(persona, c.Columna);
-            //    Grid.SetRow(persona, c.Fila);
-            //    grdEscenari.Children.Add(persona);
-            //}
+                persona = new TextBlock();
+                persona.FontSize = 14;
+                persona.FontWeight = FontWeights.Bold;
+                persona.Text = "*";
+                Grid.SetColumn(persona, c.Columna);
+                Grid.SetRow(persona, c.Fila);
+                grdEscenari.Children.Add(persona);
+            }
 
             // Assignem les simpaties
             for (int person = 0; person < esc.Tp.NumPersones; person++)
@@ -190,17 +189,22 @@ namespace ReunioSocial
                     if (esc.Tp.ElementAt(person).Nom != esc.Tp.ElementAt(personaALaLlista).Nom)
                     {
                         simpatia = r.Next(-5, 6);
-                        // aplicar simpatia per cada persona contra totes les de la llista
-                        if(esc.Tp.ElementAt(person) is Home && !(esc.Tp.ElementAt(person) is Cambrer))
+
+                        if (!(esc.Tp.ElementAt(personaALaLlista) is Cambrer && !(esc.Tp.ElementAt(person) is Cambrer)))
                         {
-                            Home h = esc.Tp.ElementAt(person) as Home;
-                            h[esc.Tp.ElementAt(personaALaLlista).Nom] = simpatia;
+                            // aplicar simpatia per cada persona contra totes les de la llista menys dels cambrers
+                            if (esc.Tp.ElementAt(person) is Home)
+                            {
+                                Home h = esc.Tp.ElementAt(person) as Home;
+                                h[esc.Tp.ElementAt(personaALaLlista).Nom] = simpatia;
+                            }
+                            else if (esc.Tp.ElementAt(person) is Dona)
+                            {
+                                Dona d = esc.Tp.ElementAt(person) as Dona;
+                                d[esc.Tp.ElementAt(personaALaLlista).Nom] = simpatia;
+                            }
                         }
-                        else if (esc.Tp.ElementAt(person) is Dona && !(esc.Tp.ElementAt(person) is Cambrer))
-                        {
-                            Dona d = esc.Tp.ElementAt(person) as Dona;
-                            d[esc.Tp.ElementAt(personaALaLlista).Nom] = simpatia;
-                        }
+                        
                     }
                 }
             }
@@ -212,6 +216,8 @@ namespace ReunioSocial
             grdGraella.RowDefinitions.Clear();
             grdGraella.Children.Clear();
 
+            num_convidats = num_dones + num_homes;
+
             ColumnDefinition colDef;
             RowDefinition rowDef;
             TextBlock nomPersona, simpatiaPersona;
@@ -220,7 +226,7 @@ namespace ReunioSocial
             colDef = new ColumnDefinition();
             grdGraella.ColumnDefinitions.Add(colDef);
             //columnes grid Graella
-            for (int i = 0; i < esc.Tp.NumPersones; i++)
+            for (int i = 0; i < num_convidats; i++)
             {
                 colDef = new ColumnDefinition();
 
@@ -243,7 +249,7 @@ namespace ReunioSocial
             rowDef = new RowDefinition();
             grdGraella.RowDefinitions.Add(rowDef);
             //files grid Graella
-            for (int i = 0; i < esc.Tp.NumPersones; i++)
+            for (int i = 0; i < num_convidats; i++)
             {
                 rowDef = new RowDefinition();
                 grdGraella.RowDefinitions.Add(rowDef);
@@ -261,11 +267,11 @@ namespace ReunioSocial
             }
 
             // Mostrem les simpaties
-            for (int i = 0; i < esc.Tp.NumPersones; i++)
+            for (int i = 0; i < num_convidats; i++)
             {
-                for(int j = 0; j < esc.Tp.NumPersones; j++)
+                for (int j = 0; j < num_convidats; j++)
                 {
-                    if(j != i)
+                    if(j != i && !(esc.Tp.ElementAt(i) is Cambrer) && !(esc.Tp.ElementAt(j) is Cambrer))
                     {
                         simpatiaPersona = new TextBlock();
                         simpatiaPersona.FontSize = 16;

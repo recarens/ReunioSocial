@@ -34,11 +34,11 @@
 
 
         <Label Margin="10" Grid.Row="3" Grid.Column="0">Numero de files</Label>
-        <Slider x:Name="sldFiles" Maximum="10" Minimum="1" Margin="10,10,83,10" Grid.Row="3" Grid.Column="1" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldFiles_ValueChanged"/>
+        <Slider x:Name="sldFiles" Maximum="30" Minimum="1" Margin="10,10,83,10" Grid.Row="3" Grid.Column="1" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldFiles_ValueChanged"/>
 
 
         <Label Margin="10" Grid.Row="4" Grid.Column="0">Numero de columnes</Label>
-        <Slider x:Name="sldColumnes" Maximum="10" Minimum="1" Margin="10,10,83,10" Grid.Row="4" Grid.Column="1" LargeChange="2" SmallChange="1" Value="1" ValueChanged="sldColumnes_ValueChanged"/>
+        <Slider x:Name="sldColumnes" Maximum="30" Minimum="1" Margin="10,10,83,10" Grid.Row="4" Grid.Column="1" LargeChange="2" SmallChange="1" Value="1" ValueChanged="sldColumnes_ValueChanged"/>
         
         <Button x:Name="btnAcceptar" Grid.ColumnSpan="2" Content="Acceptar" HorizontalAlignment="Left" Margin="214,22,0,0" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="btnAcceptar_Click"/>
 
