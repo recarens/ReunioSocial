@@ -167,6 +167,16 @@ namespace ReunioSocial
                     {
                         simpatia = r.Next(-5, 6);
                         // aplicar simpatia per cada persona contra totes les de la llista
+                        if(esc.Tp.ElementAt(person) is Home)
+                        {
+                            Home h = esc.Tp.ElementAt(person) as Home;
+                            h[esc.Tp.ElementAt(personaALaLlista).Nom] = simpatia;
+                        }
+                        else if(esc.Tp.ElementAt(person) is Dona)
+                        {
+                            Dona d = esc.Tp.ElementAt(person) as Dona;
+                            d[esc.Tp.ElementAt(personaALaLlista).Nom] = simpatia;
+                        }
                     }
                 }
             }
