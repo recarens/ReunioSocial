@@ -158,6 +158,30 @@ namespace ReunioSocial
                 grdEscenari.Children.Add(persona);
             }
 
+            //// Generem els cambrers
+            //for (int home = 0; home < num_homes; home++)
+            //{
+            //    // generem valors aleatòris
+            //    fila = r.Next(0, num_files - 1);
+            //    columna = r.Next(0, num_columnes - 1);
+            //    //nomRandom = r.Next(0, nomsHomes.Count());
+            //    sexe = r.Next(0, 4);
+
+            //    // Creem un nou home i la col·loquem a l'escenari
+            //    Cambrer c = new Cambrer();
+            //    c.Columna = columna;
+            //    c.Fila = fila;
+            //    esc.posar(c);
+
+            //    persona = new TextBlock();
+            //    persona.FontSize = 14;
+            //    persona.FontWeight = FontWeights.Bold;
+            //    persona.Text = "*";
+            //    Grid.SetColumn(persona, c.Columna);
+            //    Grid.SetRow(persona, c.Fila);
+            //    grdEscenari.Children.Add(persona);
+            //}
+
             // Assignem les simpaties
             for (int person = 0; person < esc.Tp.NumPersones; person++)
             {
@@ -167,12 +191,12 @@ namespace ReunioSocial
                     {
                         simpatia = r.Next(-5, 6);
                         // aplicar simpatia per cada persona contra totes les de la llista
-                        if(esc.Tp.ElementAt(person) is Home)
+                        if(esc.Tp.ElementAt(person) is Home && !(esc.Tp.ElementAt(person) is Cambrer))
                         {
                             Home h = esc.Tp.ElementAt(person) as Home;
                             h[esc.Tp.ElementAt(personaALaLlista).Nom] = simpatia;
                         }
-                        else if(esc.Tp.ElementAt(person) is Dona)
+                        else if (esc.Tp.ElementAt(person) is Dona && !(esc.Tp.ElementAt(person) is Cambrer))
                         {
                             Dona d = esc.Tp.ElementAt(person) as Dona;
                             d[esc.Tp.ElementAt(personaALaLlista).Nom] = simpatia;
@@ -213,7 +237,6 @@ namespace ReunioSocial
                 Grid.SetRow(nomPersona, 0);
                 Grid.SetColumn(nomPersona, i+1);
                 grdGraella.Children.Add(nomPersona);
-
             }
 
             //Fila de noms
@@ -237,11 +260,39 @@ namespace ReunioSocial
                 grdGraella.Children.Add(nomPersona);
             }
 
-            grdEscenari.ShowGridLines = true;
+            // Mostrem les simpaties
+            for (int i = 0; i < esc.Tp.NumPersones; i++)
+            {
+                for(int j = 0; j < esc.Tp.NumPersones; j++)
+                {
+                    if(j != i)
+                    {
+                        simpatiaPersona = new TextBlock();
+                        simpatiaPersona.FontSize = 16;
+                        simpatiaPersona.FontWeight = FontWeights.Bold;
+                        simpatiaPersona.VerticalAlignment = VerticalAlignment.Center;
+                        simpatiaPersona.HorizontalAlignment = HorizontalAlignment.Center;
+
+                        if (esc.Tp.ElementAt(i) is Home)
+                        {
+                            Home aux = (Home)esc.Tp.ElementAt(i);
+                            simpatiaPersona.Text = aux[esc.Tp.ElementAt(j).Nom].ToString();
+                        }
+                        else if(esc.Tp.ElementAt(i) is Dona)
+                        {
+                            Dona aux = (Dona)esc.Tp.ElementAt(i);
+                            simpatiaPersona.Text = aux[esc.Tp.ElementAt(j).Nom].ToString();
+                        }
+
+                        Grid.SetColumn(simpatiaPersona, j + 1);
+                        Grid.SetRow(simpatiaPersona, i + 1);
+                        grdGraella.Children.Add(simpatiaPersona);
+                    }
+                }
+            }
+
+                grdEscenari.ShowGridLines = true;
             grdGraella.ShowGridLines = true;
-
-            
-
         }
 
 
