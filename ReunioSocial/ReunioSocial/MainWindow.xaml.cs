@@ -72,13 +72,23 @@ namespace ReunioSocial
 
                 persona = new TextBlock();
                 persona.FontSize = 14;
+                
 
                 if (esc.Tp.ElementAt(i) is Cambrer)
+                {
+                    blocPersona = new StackPanel();
                     persona.Text = "*";
+                    persona.FontSize = 30;
+                    persona.VerticalAlignment = VerticalAlignment.Center;
+                    persona.HorizontalAlignment = HorizontalAlignment.Center;
+                    persona.FontWeight = FontWeights.Bold;                    
+                }
 
                 else
                 {
                     persona.Text = esc.Tp.ElementAt(i).Nom;
+                    persona.FontSize = 14;
+                    persona.FontWeight = FontWeights.Bold;
 
                     if(esc.Tp.ElementAt(i) is Home)
                     {
@@ -97,9 +107,10 @@ namespace ReunioSocial
                         blocPersona.Background = fons;
                     }
 
-                    blocPersona.Children.Add(persona);
+                    
                 }
-
+                
+                blocPersona.Children.Add(persona);
 
                 Grid.SetColumn(blocPersona, esc.Tp.ElementAt(i).Columna);
                 Grid.SetRow(blocPersona, esc.Tp.ElementAt(i).Fila);
@@ -159,7 +170,6 @@ namespace ReunioSocial
                 d.Fila = fila;
                 esc.posar(d);
 
-                
 
                 persona = new TextBlock();
                 persona.FontSize = 14;
