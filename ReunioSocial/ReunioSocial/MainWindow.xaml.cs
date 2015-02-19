@@ -28,6 +28,10 @@ namespace ReunioSocial
         private int num_columnes = 0;
         string[] nomsDones = { "maria","marta","anna","cristina","susana","ague","channel","noa","maite","mercedes","nuria","silvia" };
         string[] nomsHomes = { "joan", "jordi", "cristian", "eric", "david", "alex", "sergi", "martí", "xavier", "eudald", "gabri", "arnau" };
+
+        string[] imgHomes = { "Brian.png", "Peter Griffin.png", "Quagmire.PNG", "xerxes.png" };
+        string[] imgDones = { "tia1.png", "tia2.png", "tia3.png" };
+
         Escenari esc;
 
         public MainWindow()
@@ -47,7 +51,60 @@ namespace ReunioSocial
             esc.Cicle();
             //PintarEscenari();
 
+
+
+            RePintaEscenari();
+            
             MessageBox.Show("Convidat: " + esc.Tp.ElementAt(0).Nom + " -> fila: " + esc.Tp.ElementAt(0).Fila + " -> Columna: " + esc.Tp.ElementAt(0).Columna);
+        }
+
+        private void RePintaEscenari()
+        {
+            StackPanel blocPersona;
+            TextBlock persona;
+            grdEscenari.Children.Clear();
+            string nomImatge;
+            Random r = new Random();
+
+            for (int i = 0; i < esc.Tp.NumPersones; i++)
+            {
+                blocPersona = new StackPanel();
+
+                persona = new TextBlock();
+                persona.FontSize = 14;
+
+                if (esc.Tp.ElementAt(i) is Cambrer)
+                    persona.Text = "*";
+
+                else
+                {
+                    persona.Text = esc.Tp.ElementAt(i).Nom;
+
+                    if(esc.Tp.ElementAt(i) is Home)
+                    {
+                        nomImatge = esc.Tp.ElementAt(i).NomImg;
+                        // Assignem la imatge i el nom
+                        blocPersona = new StackPanel();
+                        ImageBrush fons = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Fotos/Homes/"+nomImatge)));
+                        blocPersona.Background = fons;
+                    }
+                    else
+                    {
+                        nomImatge = esc.Tp.ElementAt(i).NomImg;
+                        // Assignem la imatge i el nom
+                        blocPersona = new StackPanel();
+                        ImageBrush fons = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Fotos/Dones/" + nomImatge)));
+                        blocPersona.Background = fons;
+                    }
+
+                    blocPersona.Children.Add(persona);
+                }
+
+
+                Grid.SetColumn(blocPersona, esc.Tp.ElementAt(i).Columna);
+                Grid.SetRow(blocPersona, esc.Tp.ElementAt(i).Fila);
+                grdEscenari.Children.Add(blocPersona);
+            }
         }
 
         /// <summary>
@@ -78,8 +135,9 @@ namespace ReunioSocial
             Random r = new Random();
             int nomRandom, sexe, fila, columna;
 
+            StackPanel blocPersona;
             TextBlock persona;
-
+            string nomImatge;
 
             // Generem les dones
             for (int dona = 0; dona < num_dones; dona++)
@@ -87,22 +145,31 @@ namespace ReunioSocial
                 // generem valors aleatòris
                 fila = r.Next(0, num_files - 1);
                 columna = r.Next(0, num_columnes - 1);
-                //nomRandom = r.Next(0,nomsDones.Count());
                 sexe = r.Next(0, 4);
 
+                // Assignem la imatge i el nom
+                nomImatge = imgDones[r.Next(0, imgDones.Length)];
+                blocPersona = new StackPanel();
+                ImageBrush fons = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Fotos/Dones/" + nomImatge)));
+                blocPersona.Background = fons;
+
                 // Creem una nova dona i la col·loquem a l'escenari
-                Dona d = new Dona(nomsDones[dona], sexe);
+                Dona d = new Dona(nomsDones[dona], sexe, nomImatge);
                 d.Columna = columna;
                 d.Fila = fila;
                 esc.posar(d);
+
+                
 
                 persona = new TextBlock();
                 persona.FontSize = 14;
                 persona.FontWeight = FontWeights.Bold;
                 persona.Text = d.Nom;
-                Grid.SetColumn(persona, d.Columna);
-                Grid.SetRow(persona, d.Fila);
-                grdEscenari.Children.Add(persona);
+                blocPersona.Children.Add(persona);
+
+                Grid.SetColumn(blocPersona, d.Columna);
+                Grid.SetRow(blocPersona, d.Fila);
+                grdEscenari.Children.Add(blocPersona);
 
             }
 
@@ -115,19 +182,27 @@ namespace ReunioSocial
                 //nomRandom = r.Next(0, nomsHomes.Count());
                 sexe = r.Next(0, 4);
 
+                // Assignem la imatge i el nom
+                nomImatge = imgHomes[r.Next(0, imgHomes.Length)];
+                blocPersona = new StackPanel();
+                ImageBrush fons = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Fotos/Homes/" + nomImatge)));
+                blocPersona.Background = fons;
+
                 // Creem un nou home i la col·loquem a l'escenari
-                Home h = new Home(nomsHomes[home], sexe);
+                Home h = new Home(nomsHomes[home], sexe, nomImatge);
                 h.Columna = columna;
                 h.Fila = fila;
                 esc.posar(h);
-
+                
                 persona = new TextBlock();
                 persona.FontSize = 14;
                 persona.FontWeight = FontWeights.Bold;
                 persona.Text = h.Nom;
-                Grid.SetColumn(persona, h.Columna);
-                Grid.SetRow(persona, h.Fila);
-                grdEscenari.Children.Add(persona);
+                blocPersona.Children.Add(persona);
+
+                Grid.SetColumn(blocPersona, h.Columna);
+                Grid.SetRow(blocPersona, h.Fila);
+                grdEscenari.Children.Add(blocPersona);
             }
 
             // Generem els cambrers
@@ -144,7 +219,9 @@ namespace ReunioSocial
                 esc.posar(c);
 
                 persona = new TextBlock();
-                persona.FontSize = 14;
+                persona.FontSize = 30;
+                persona.VerticalAlignment = VerticalAlignment.Center;
+                persona.HorizontalAlignment = HorizontalAlignment.Center;
                 persona.FontWeight = FontWeights.Bold;
                 persona.Text = "*";
                 Grid.SetColumn(persona, c.Columna);

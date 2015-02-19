@@ -91,6 +91,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Fotos\Cambrer\Thumbs.db" />
+    <None Include="Fotos\Dones\Thumbs.db" />
+    <None Include="Fotos\Homes\Thumbs.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,6 +108,16 @@
       <Project>{f75d25a6-eb6c-4970-970e-eb1e6237aedf}</Project>
       <Name>ClassesParty</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fotos\Cambrer\Camarero.png" />
+    <Resource Include="Fotos\Dones\tia1.png" />
+    <Resource Include="Fotos\Dones\tia2.png" />
+    <Resource Include="Fotos\Dones\tia3.png" />
+    <Resource Include="Fotos\Homes\Brian.png" />
+    <Resource Include="Fotos\Homes\Peter Griffin.png" />
+    <Resource Include="Fotos\Homes\Quagmire.PNG" />
+    <Resource Include="Fotos\Homes\xerxes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

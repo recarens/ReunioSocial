@@ -94,7 +94,9 @@ namespace ClassesParty
                 esc[filDesti, colDesti].Columna = colDesti;
                 esc[filOrig, colOrig] = new Posicio(filOrig,colOrig);
             }
+
         }
+
         /// <summary>
         /// Retorna la Posició que hi ha en una coordenada donada
         /// </summary>
@@ -243,11 +245,11 @@ namespace ClassesParty
                 }
                 else if (d == Direccio.Dreta)
                 {
-                     this.Moure(p.Fila, p.Columna, p.Fila, p.Columna + 1);
+                    this.Moure(p.Fila, p.Columna, p.Fila, p.Columna + 1);
                 }
                 else if (d == Direccio.Esquerra)
                 {
-                     this.Moure(p.Fila, p.Columna, p.Fila, p.Columna - 1);
+                    this.Moure(p.Fila, p.Columna, p.Fila, p.Columna - 1);
                 }
                 else if (d == Direccio.Quiet)
                 {

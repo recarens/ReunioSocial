@@ -1,16 +1,22 @@
 ﻿<Window x:Class="ReunioSocial.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="451.046" Width="757.845">
+        Title="DiscoMegaSuper" Height="600" Width="900">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
         <Grid x:Name="grdEscenari"  Background="Aqua" Grid.Column="0" Margin="10"/>
         <Grid x:Name="grdGraella"  Background="Brown" Grid.Column="1" Margin="10,10,10,76"/>
-        <Button x:Name="btnCicle" Grid.Column="1" Margin="255,371,10,10" Content="Fer cicle" FontSize="20" Click="btnCicle_Click"/>
-        <Button x:Name="btnInicia" Grid.Column="1" Margin="132,371,133,10" Content="Inicia" FontSize="20" Click="btnInicia_Click"/>
-        <Button x:Name="btnConfigura" Grid.Column="1" Margin="10,371,255,10" Content="Configura" FontSize="20" Click="btnConfigura_Click"/>
+        <WrapPanel Grid.ColumnSpan="2" Grid.Row="1">
+            <Button x:Name="btnConfigura" Width="150" Margin="50,0" Content="Configura" FontSize="20" Click="btnConfigura_Click"/>
+            <Button x:Name="btnInicia" Width="150" Margin="50,0"  Content="Inicia" FontSize="20" Click="btnInicia_Click"/>
+            <Button x:Name="btnCicle" Width="150" Margin="50,0"   Content="Fer cicle" FontSize="20" Click="btnCicle_Click"/>
+        </WrapPanel>
     </Grid>
 </Window>
