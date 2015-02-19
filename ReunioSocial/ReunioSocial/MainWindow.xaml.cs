@@ -50,12 +50,10 @@ namespace ReunioSocial
         {
             esc.Cicle();
             //PintarEscenari();
-
-
-
+            
             RePintaEscenari();
             
-            MessageBox.Show("Convidat: " + esc.Tp.ElementAt(0).Nom + " -> fila: " + esc.Tp.ElementAt(0).Fila + " -> Columna: " + esc.Tp.ElementAt(0).Columna);
+            //MessageBox.Show("Convidat: " + esc.Tp.ElementAt(0).Nom + " -> fila: " + esc.Tp.ElementAt(0).Fila + " -> Columna: " + esc.Tp.ElementAt(0).Columna);
         }
 
         private void RePintaEscenari()
@@ -330,7 +328,7 @@ namespace ReunioSocial
 
             ompleSimpaties();
 
-            grdEscenari.ShowGridLines = true;
+            //grdEscenari.ShowGridLines = true;
             grdGraella.ShowGridLines = true;
             
         }
@@ -399,8 +397,10 @@ namespace ReunioSocial
                 nomPersona.FontSize = 14;
                 nomPersona.FontWeight = FontWeights.Bold;
                 nomPersona.Foreground = new SolidColorBrush(Colors.Black);
-                nomPersona.VerticalAlignment = VerticalAlignment.Top;
+                nomPersona.VerticalAlignment = VerticalAlignment.Center;
                 nomPersona.HorizontalAlignment = HorizontalAlignment.Center;
+                nomPersona.RenderTransformOrigin = new Point(0.5, 0.5); 
+                nomPersona.RenderTransform = new RotateTransform(-90);
                 Grid.SetRow(nomPersona, 0);
                 Grid.SetColumn(nomPersona, i + 1);
                 grdGraella.Children.Add(nomPersona);

@@ -3,20 +3,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="DiscoMegaSuper" Height="600" Width="900">
     <Grid>
+        <Grid.Resources>
+            <ImageBrush x:Key="PinzellMosaic" TileMode="Tile"
+                    ViewportUnits="RelativeToBoundingBox"
+                    ImageSource="Fotos/fons.jpg"
+                    Opacity="0.8">
+            </ImageBrush>
+        </Grid.Resources>
+        <Grid.Background>
+            <StaticResource ResourceKey="PinzellMosaic"></StaticResource>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="40" />
         </Grid.RowDefinitions>
-        <Grid x:Name="grdEscenari"  Background="Aqua" Grid.Column="0" Margin="10"/>
-        <Grid x:Name="grdGraella"  Background="Brown" Grid.Column="1" Margin="10,10,10,76"/>
+        <Grid x:Name="grdEscenari" Grid.Column="0" Margin="10"/>
+        <Grid x:Name="grdGraella" Width="auto" Height="auto" Background="#FFFFEEEE" Grid.Column="1" Margin="20,0,0,86" Opacity="0.5"/>
         <WrapPanel Grid.ColumnSpan="2" Grid.Row="1">
             <Button x:Name="btnConfigura" Width="150" Margin="50,0" Content="Configura" FontSize="20" Click="btnConfigura_Click"/>
-            <Button x:Name="btnInicia" Width="150" Margin="50,0"  Content="Inicia" FontSize="20" Click="btnInicia_Click"/>
-            <Button x:Name="btnCicle" Width="150" Margin="50,0"   Content="Fer cicle" FontSize="20" Click="btnCicle_Click"/>
+            <Button x:Name="btnInicia" Width="150" Margin="50,0"  Content="Paga l'entrada" FontSize="20" Click="btnInicia_Click"/>
+            <Button x:Name="btnCicle" Width="150" Margin="50,0"   Content="Que siga la fiesta" FontSize="20" Click="btnCicle_Click"/>
         </WrapPanel>
     </Grid>
 </Window>

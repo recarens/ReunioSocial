@@ -176,7 +176,6 @@ namespace ClassesParty
                 esc[pers.Fila, pers.Columna] = pers;
                 if (pers is Home)
                 {
-
                     nHomes++;
                 }
                 else if (pers is Dona)
