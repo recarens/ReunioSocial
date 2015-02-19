@@ -45,7 +45,9 @@ namespace ReunioSocial
         private void btnCicle_Click(object sender, RoutedEventArgs e)
         {
             esc.Cicle();
-            PintarEscenari();
+            //PintarEscenari();
+
+            MessageBox.Show("Convidat: " + esc.Tp.ElementAt(0).Nom + " -> fila: " + esc.Tp.ElementAt(0).Fila + " -> Columna: " + esc.Tp.ElementAt(0).Columna);
         }
 
         /// <summary>
