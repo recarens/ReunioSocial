@@ -11,7 +11,7 @@ namespace ClassesParty
     {
         int fila;
         int columna;
-
+        
         /// <summary>
         /// Crea una nova posició
         /// </summary>

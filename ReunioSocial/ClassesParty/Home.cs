@@ -27,7 +27,7 @@ namespace ClassesParty
             int interes = 0;
             if (!pos.Buida)
             {
-                if (((Convidat)pos).EsConvidat())
+                if (pos is Convidat)
                 {
                     if (pos is Dona)
                     {

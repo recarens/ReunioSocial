@@ -3,29 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Drawing;
 namespace ClassesParty
 {
     public abstract class Persona : Posicio
     {
+        //Bitmap bt;
         string nom;
+
         /// <summary>
         /// Crea una persona
         /// </summary>
         /// <param name="nom">Strng que identifica la persona</param>
         /// <param name="fil">Fila on està localitzada</param>
         /// <param name="col">Columna on està localitzada</param>
-        public Persona(string nom, int fil, int col) : base(fil, col)
+        public Persona(string nom, int fil, int col/*,Bitmap img*/) : base(fil, col)
         {
             this.nom = nom;
+            //bt = new Bitmap(img);
         }
         /// <summary>
         /// Crea una persona
         /// </summary>
         /// <param name="nom">nom de la persona</param>
-        public Persona(string nom)
+        public Persona(string nom/*, Bitmap img*/)
         {
             this.nom = nom;
+            //this.bt = new Bitmap(img);
         }
         /// <summary>
         /// Crea una persona
@@ -45,6 +49,13 @@ namespace ClassesParty
         {
             get { return false;}
         }
+
+        //Retorna o asigna un bitmat "imatge" a la persona;
+        /*public Bitmap Bt
+        {
+            get { return bt; }
+            set { bt = value; }
+        }*/
         /// <summary>
         /// Atraccio de persona sobre una determinada posicio
         /// </summary>
