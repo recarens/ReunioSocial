@@ -26,11 +26,10 @@ namespace ClassesParty
         /// <returns>Interès quantificat</returns>
         public override int Interes(Posicio pos)
         {
-            //(pos is Convidat)
             int interes = 0;
             if(!pos.Buida)
             {
-                if(/*((Persona)pos).EsConvidat()*/pos is Convidat)
+                if(pos is Convidat)
                 { 
                      if (pos is Home)
                      {
