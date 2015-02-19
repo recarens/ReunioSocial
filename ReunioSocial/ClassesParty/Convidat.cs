@@ -17,7 +17,7 @@ namespace ClassesParty
         /// </summary>
         /// <param name="nom">Caràcter que l'identificarà</param>
         /// <param name="sex">Plus de simpatia sobre el sexe contrari</param>
-        public Convidat(string nom, int sexe):base(nom)
+        public Convidat(string nom, int sexe, string nomImg):base(nom,nomImg)
         {
             this.sexe = sexe;
             simpaties = new Dictionary<string, int>();

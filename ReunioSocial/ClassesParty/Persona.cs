@@ -8,8 +8,8 @@ namespace ClassesParty
 {
     public abstract class Persona : Posicio
     {
-        //Bitmap bt;
         string nom;
+        string nomImg;
 
         /// <summary>
         /// Crea una persona
@@ -17,19 +17,19 @@ namespace ClassesParty
         /// <param name="nom">Strng que identifica la persona</param>
         /// <param name="fil">Fila on està localitzada</param>
         /// <param name="col">Columna on està localitzada</param>
-        public Persona(string nom, int fil, int col/*,Bitmap img*/) : base(fil, col)
+        public Persona(string nom, int fil, int col, string nomImg) : base(fil, col)
         {
             this.nom = nom;
-            //bt = new Bitmap(img);
+            this.nomImg = nomImg;
         }
         /// <summary>
         /// Crea una persona
         /// </summary>
         /// <param name="nom">nom de la persona</param>
-        public Persona(string nom/*, Bitmap img*/)
+        public Persona(string nom, string nomImg)
         {
             this.nom = nom;
-            //this.bt = new Bitmap(img);
+            this.nomImg = nomImg;
         }
         /// <summary>
         /// Crea una persona
@@ -51,11 +51,11 @@ namespace ClassesParty
         }
 
         //Retorna o asigna un bitmat "imatge" a la persona;
-        /*public Bitmap Bt
+        public string NomImg
         {
-            get { return bt; }
-            set { bt = value; }
-        }*/
+            get { return nomImg; }
+            set { nomImg = value; }
+        }
         /// <summary>
         /// Atraccio de persona sobre una determinada posicio
         /// </summary>
