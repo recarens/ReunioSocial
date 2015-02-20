@@ -179,7 +179,11 @@ namespace ReunioSocial
         private void btnInicia_Click(object sender, RoutedEventArgs e)
         {
             iniciaEscenari();
-            iniciaGraella();
+
+            num_convidats = num_homes + num_dones;
+
+            Window graellaSimpatia = new graellaSimpaties(esc, num_convidats);
+            graellaSimpatia.Show();
         }
 
 
@@ -201,6 +205,8 @@ namespace ReunioSocial
 
             // Assignem les simpaties a tots els convidats anvers tots els convidats menys a ell mateix i als cambrers
             assignarSimpaties();
+
+            grdEscenari.ShowGridLines = true;
             
         }
 
@@ -240,122 +246,6 @@ namespace ReunioSocial
             }
         }
 
-        private void iniciaGraella()
-        {
-            // Reiniciem la graella
-            grdGraella.ColumnDefinitions.Clear();
-            grdGraella.RowDefinitions.Clear();
-            grdGraella.Children.Clear();
-
-            // Calculem el nombre de convidats per fer la graella sense tenir en compte els cambrers
-            // ja que no cal que apareixin
-            num_convidats = num_dones + num_homes;
-
-            inicialitzaGraella();
-
-            ompleSimpaties();
-
-            grdEscenari.ShowGridLines = true;
-            grdGraella.ShowGridLines = true;
-            
-        }
-
-        #region GENEREM TOTA LA GRAELLA DE SIMPATIES
-        private void ompleSimpaties()
-        {
-            TextBlock simpatiaPersona;
-
-            // Mostrem les simpaties de cada convidat anvers a totes les altres a la graella
-            for (int i = 0; i < num_convidats; i++)
-            {
-                for (int j = 0; j < num_convidats; j++)
-                {
-                    if (j != i && !(esc.Tp.ElementAt(i) is Cambrer) && !(esc.Tp.ElementAt(j) is Cambrer))
-                    {
-                        simpatiaPersona = new TextBlock();
-                        simpatiaPersona.FontSize = 16;
-                        simpatiaPersona.FontWeight = FontWeights.Bold;
-                        simpatiaPersona.VerticalAlignment = VerticalAlignment.Center;
-                        simpatiaPersona.HorizontalAlignment = HorizontalAlignment.Center;
-
-                        if (esc.Tp.ElementAt(i) is Home)
-                        {
-                            Home aux = (Home)esc.Tp.ElementAt(i);
-                            simpatiaPersona.Text = (aux[esc.Tp.ElementAt(j).Nom] + aux.PlusSexe).ToString();
-                        }
-                        else if (esc.Tp.ElementAt(i) is Dona)
-                        {
-                            Dona aux = (Dona)esc.Tp.ElementAt(i);
-                            simpatiaPersona.Text = (aux[esc.Tp.ElementAt(j).Nom] + aux.PlusSexe).ToString();
-                        }
-
-                        Grid.SetColumn(simpatiaPersona, j + 1);
-                        Grid.SetRow(simpatiaPersona, i + 1);
-                        grdGraella.Children.Add(simpatiaPersona);
-                    }
-                }
-            }            
-        }
-
-        // Inicialitzem la graella amb els noms dels convidats a la primera fila i també a la primera columna
-        private void inicialitzaGraella()
-        {
-            ColumnDefinition colDef;
-            RowDefinition rowDef;
-            TextBlock nomPersona;
-
-            ////Columna de noms
-            colDef = new ColumnDefinition();
-            grdGraella.ColumnDefinitions.Add(colDef);
-
-            // Generem les columnes de la graella 
-            // i també posem els noms dels convidats a la primera fila
-            for (int i = 0; i < num_convidats; i++)
-            {
-                colDef = new ColumnDefinition();
-
-                grdGraella.ColumnDefinitions.Add(colDef);
-
-                // Creem l'element que mostrarà el nom de la persona
-                nomPersona = new TextBlock();
-                nomPersona.Text = esc.Tp.ElementAt(i).Nom;
-                nomPersona.FontSize = 14;
-                nomPersona.FontWeight = FontWeights.Bold;
-                nomPersona.Foreground = new SolidColorBrush(Colors.Black);
-                nomPersona.VerticalAlignment = VerticalAlignment.Center;
-                nomPersona.HorizontalAlignment = HorizontalAlignment.Center;
-                nomPersona.RenderTransformOrigin = new Point(0.5, 0.5); 
-                nomPersona.RenderTransform = new RotateTransform(-90);
-                Grid.SetRow(nomPersona, 0);
-                Grid.SetColumn(nomPersona, i + 1);
-                grdGraella.Children.Add(nomPersona);
-            }
-
-            //Fila de noms
-            rowDef = new RowDefinition();
-            grdGraella.RowDefinitions.Add(rowDef);
-
-            // Generem les files de la graella 
-            // i també posem els noms dels convidats a la primera columna
-            for (int i = 0; i < num_convidats; i++)
-            {
-                rowDef = new RowDefinition();
-                grdGraella.RowDefinitions.Add(rowDef);
-
-                nomPersona = new TextBlock();
-                nomPersona.Text = esc.Tp.ElementAt(i).Nom;
-                nomPersona.FontSize = 14;
-                nomPersona.FontWeight = FontWeights.Bold;
-                nomPersona.Foreground = new SolidColorBrush(Colors.Black);
-                nomPersona.VerticalAlignment = VerticalAlignment.Center;
-                nomPersona.HorizontalAlignment = HorizontalAlignment.Center;
-                Grid.SetRow(nomPersona, i + 1);
-                Grid.SetColumn(nomPersona, 0);
-                grdGraella.Children.Add(nomPersona);
-            }
-        }
-
-        #endregion
 
         public void creaQuadre(string rutaImatge, string nom, int fila, int columna, int midaLletra)
         {
@@ -364,6 +254,9 @@ namespace ReunioSocial
 
             nomPersona.FontSize = midaLletra;
             nomPersona.FontWeight = FontWeights.Bold;
+            Color c = new Color();
+            c.R = 255;
+            nomPersona.Foreground = new SolidColorBrush(c);
             nomPersona.HorizontalAlignment = HorizontalAlignment.Center;
             nomPersona.VerticalAlignment = VerticalAlignment.Bottom;
             nomPersona.Text = nom;
@@ -371,12 +264,11 @@ namespace ReunioSocial
             persona.Children.Add(nomPersona);
             ImageBrush fons = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), rutaImatge)));
             persona.Background = fons;
-            
+
             Grid.SetColumn(persona, columna);
             Grid.SetRow(persona, fila);
             grdEscenari.Children.Add(persona);
         }
-
 
         #region PROPIETATS
         public int Num_homes

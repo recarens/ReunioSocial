@@ -68,3 +68,5 @@ C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ConfigEscenari.g.cs
 C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ConfigEscenari.baml
 C:\Users\Usuari\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\ConfigEscenari.g.cs
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\graellaSimpaties.baml
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\obj\Debug\graellaSimpaties.g.cs
