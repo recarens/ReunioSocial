@@ -79,8 +79,7 @@ namespace ReunioSocial
                 }
                 else
                 {
-                    nomImatge = esc.Tp.ElementAt(i).NomImg;
-                        
+                    nomImatge = esc.Tp.ElementAt(i).NomImg; 
                     creaQuadre(nomImatge,esc.Tp.ElementAt(i).Nom,esc.Tp.ElementAt(i).Fila,esc.Tp.ElementAt(i).Columna,14);
                 }
             }
@@ -119,8 +118,8 @@ namespace ReunioSocial
             for (int dona = 0; dona < num_dones; dona++)
             {
                 // generem valors aleatòris
-                fila = r.Next(0, num_files - 1);
-                columna = r.Next(0, num_columnes - 1);
+                fila = r.Next(0, num_files);
+                columna = r.Next(0, num_columnes);
                 sexe = r.Next(0, 4);
 
                 // Assignem el nom de la imatge
@@ -139,8 +138,8 @@ namespace ReunioSocial
             for (int home = 0; home < num_homes; home++)
             {
                 // generem valors aleatòris
-                fila = r.Next(0, num_files - 1);
-                columna = r.Next(0, num_columnes - 1);
+                fila = r.Next(0, num_files);
+                columna = r.Next(0, num_columnes);
                 sexe = r.Next(0, 4);
 
                 // Assignem el nom de la imatge
@@ -160,8 +159,8 @@ namespace ReunioSocial
             for (int cambrer = 0; cambrer < num_cambrers; cambrer++)
             {
                 // generem valors aleatòris
-                fila = r.Next(0, num_files - 1);
-                columna = r.Next(0, num_columnes - 1);
+                fila = r.Next(0, num_files);
+                columna = r.Next(0, num_columnes);
 
                 nomImatge = "/Fotos/Cambrer/Camarero.png";                
 
