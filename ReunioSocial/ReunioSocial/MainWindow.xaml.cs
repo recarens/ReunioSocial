@@ -30,7 +30,7 @@ namespace ReunioSocial
         string[] nomsHomes = { "joan", "jordi", "cristian", "eric", "david", "alex", "sergi", "martí", "xavier", "eudald", "gabri", "arnau" };
 
         string[] imgHomes = { "Brian.png", "Peter Griffin.png", "Quagmire.PNG", "xerxes.png" };
-        string[] imgDones = { "tia1.png", "tia2.png", "tia3.png" };
+        string[] imgDones = { "tia1.png", "tia2.png", "tia3.png", "tia4.png", "tia5.png", "tia6.png", "tia7.png", "tia8.png", "tia9.png", "tia10.png", "tia11png" };
 
         Escenari esc;
 
@@ -58,24 +58,15 @@ namespace ReunioSocial
 
         private void RePintaEscenari()
         {
-            StackPanel blocPersona;
-            TextBlock persona;
             grdEscenari.Children.Clear();
             string nomImatge;
             Random r = new Random();
 
             for (int i = 0; i < esc.Tp.NumPersones; i++)
             {
-                blocPersona = new StackPanel();
-
-                persona = new TextBlock();
-                persona.FontSize = 14;
-                
-
                 if (esc.Tp.ElementAt(i) is Cambrer)
                 {
                     creaQuadre("/Fotos/Cambrer/Camarero.png","*",esc.Tp.ElementAt(i).Fila,esc.Tp.ElementAt(i).Columna,30);
-             
                 }
                 else
                 {
@@ -290,12 +281,12 @@ namespace ReunioSocial
                         if (esc.Tp.ElementAt(i) is Home)
                         {
                             Home aux = (Home)esc.Tp.ElementAt(i);
-                            simpatiaPersona.Text = aux[esc.Tp.ElementAt(j).Nom].ToString();
+                            simpatiaPersona.Text = (aux[esc.Tp.ElementAt(j).Nom] + aux.PlusSexe).ToString();
                         }
                         else if (esc.Tp.ElementAt(i) is Dona)
                         {
                             Dona aux = (Dona)esc.Tp.ElementAt(i);
-                            simpatiaPersona.Text = aux[esc.Tp.ElementAt(j).Nom].ToString();
+                            simpatiaPersona.Text = (aux[esc.Tp.ElementAt(j).Nom] + aux.PlusSexe).ToString();
                         }
 
                         Grid.SetColumn(simpatiaPersona, j + 1);
