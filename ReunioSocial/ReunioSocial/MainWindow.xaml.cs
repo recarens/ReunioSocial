@@ -74,45 +74,15 @@ namespace ReunioSocial
 
                 if (esc.Tp.ElementAt(i) is Cambrer)
                 {
-                    blocPersona = new StackPanel();
-                    persona.Text = "*";
-                    persona.FontSize = 30;
-                    persona.VerticalAlignment = VerticalAlignment.Center;
-                    persona.HorizontalAlignment = HorizontalAlignment.Center;
-                    persona.FontWeight = FontWeights.Bold;                    
+                    creaQuadre("/Fotos/Cambrer/Camarero.png","*",esc.Tp.ElementAt(i).Fila,esc.Tp.ElementAt(i).Columna,30);
+             
                 }
-
                 else
                 {
-                    persona.Text = esc.Tp.ElementAt(i).Nom;
-                    persona.FontSize = 14;
-                    persona.FontWeight = FontWeights.Bold;
-
-                    if(esc.Tp.ElementAt(i) is Home)
-                    {
-                        nomImatge = esc.Tp.ElementAt(i).NomImg;
-                        // Assignem la imatge i el nom
-                        blocPersona = new StackPanel();
-                        ImageBrush fons = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Fotos/Homes/"+nomImatge)));
-                        blocPersona.Background = fons;
-                    }
-                    else
-                    {
-                        nomImatge = esc.Tp.ElementAt(i).NomImg;
-                        // Assignem la imatge i el nom
-                        blocPersona = new StackPanel();
-                        ImageBrush fons = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Fotos/Dones/" + nomImatge)));
-                        blocPersona.Background = fons;
-                    }
-
-                    
+                    nomImatge = esc.Tp.ElementAt(i).NomImg;
+                        
+                    creaQuadre(nomImatge,esc.Tp.ElementAt(i).Nom,esc.Tp.ElementAt(i).Fila,esc.Tp.ElementAt(i).Columna,14);
                 }
-                
-                blocPersona.Children.Add(persona);
-
-                Grid.SetColumn(blocPersona, esc.Tp.ElementAt(i).Columna);
-                Grid.SetRow(blocPersona, esc.Tp.ElementAt(i).Fila);
-                grdEscenari.Children.Add(blocPersona);
             }
         }
 
@@ -142,10 +112,7 @@ namespace ReunioSocial
         private void CrearPersones()
         {
             Random r = new Random();
-            int nomRandom, sexe, fila, columna;
-
-            StackPanel blocPersona;
-            TextBlock persona;
+            int sexe, fila, columna;
             string nomImatge;
 
             // Generem les dones
@@ -156,11 +123,8 @@ namespace ReunioSocial
                 columna = r.Next(0, num_columnes - 1);
                 sexe = r.Next(0, 4);
 
-                // Assignem la imatge i el nom
-                nomImatge = imgDones[r.Next(0, imgDones.Length)];
-                blocPersona = new StackPanel();
-                ImageBrush fons = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Fotos/Dones/" + nomImatge)));
-                blocPersona.Background = fons;
+                // Assignem el nom de la imatge
+                nomImatge = "/Fotos/Dones/"+imgDones[r.Next(0, imgDones.Length)];
 
                 // Creem una nova dona i la col·loquem a l'escenari
                 Dona d = new Dona(nomsDones[dona], sexe, nomImatge);
@@ -168,17 +132,7 @@ namespace ReunioSocial
                 d.Fila = fila;
                 esc.posar(d);
 
-
-                persona = new TextBlock();
-                persona.FontSize = 14;
-                persona.FontWeight = FontWeights.Bold;
-                persona.Text = d.Nom;
-                blocPersona.Children.Add(persona);
-
-                Grid.SetColumn(blocPersona, d.Columna);
-                Grid.SetRow(blocPersona, d.Fila);
-                grdEscenari.Children.Add(blocPersona);
-
+                creaQuadre(nomImatge,d.Nom,d.Fila,d.Columna,14);
             }
 
             // Generem els homes
@@ -187,30 +141,19 @@ namespace ReunioSocial
                 // generem valors aleatòris
                 fila = r.Next(0, num_files - 1);
                 columna = r.Next(0, num_columnes - 1);
-                //nomRandom = r.Next(0, nomsHomes.Count());
                 sexe = r.Next(0, 4);
 
-                // Assignem la imatge i el nom
-                nomImatge = imgHomes[r.Next(0, imgHomes.Length)];
-                blocPersona = new StackPanel();
-                ImageBrush fons = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), "/Fotos/Homes/" + nomImatge)));
-                blocPersona.Background = fons;
+                // Assignem el nom de la imatge
+                nomImatge =  "/Fotos/Homes/"+imgHomes[r.Next(0, imgHomes.Length)];
+                
 
                 // Creem un nou home i la col·loquem a l'escenari
                 Home h = new Home(nomsHomes[home], sexe, nomImatge);
                 h.Columna = columna;
                 h.Fila = fila;
                 esc.posar(h);
-                
-                persona = new TextBlock();
-                persona.FontSize = 14;
-                persona.FontWeight = FontWeights.Bold;
-                persona.Text = h.Nom;
-                blocPersona.Children.Add(persona);
 
-                Grid.SetColumn(blocPersona, h.Columna);
-                Grid.SetRow(blocPersona, h.Fila);
-                grdEscenari.Children.Add(blocPersona);
+                creaQuadre(nomImatge, h.Nom, h.Fila, h.Columna,14);
             }
 
             // Generem els cambrers
@@ -220,21 +163,15 @@ namespace ReunioSocial
                 fila = r.Next(0, num_files - 1);
                 columna = r.Next(0, num_columnes - 1);
 
+                nomImatge = "/Fotos/Cambrer/Camarero.png";                
+
                 // Creem un nou home i la col·loquem a l'escenari
                 Cambrer c = new Cambrer();
                 c.Columna = columna;
                 c.Fila = fila;
                 esc.posar(c);
 
-                persona = new TextBlock();
-                persona.FontSize = 30;
-                persona.VerticalAlignment = VerticalAlignment.Center;
-                persona.HorizontalAlignment = HorizontalAlignment.Center;
-                persona.FontWeight = FontWeights.Bold;
-                persona.Text = "*";
-                Grid.SetColumn(persona, c.Columna);
-                Grid.SetRow(persona, c.Fila);
-                grdEscenari.Children.Add(persona);
+                creaQuadre(nomImatge, "*", c.Fila, c.Columna,14);
             }
         }
 
@@ -328,7 +265,7 @@ namespace ReunioSocial
 
             ompleSimpaties();
 
-            //grdEscenari.ShowGridLines = true;
+            grdEscenari.ShowGridLines = true;
             grdGraella.ShowGridLines = true;
             
         }
@@ -367,9 +304,7 @@ namespace ReunioSocial
                         grdGraella.Children.Add(simpatiaPersona);
                     }
                 }
-            }
-
-            
+            }            
         }
 
         // Inicialitzem la graella amb els noms dels convidats a la primera fila i també a la primera columna
@@ -431,6 +366,26 @@ namespace ReunioSocial
         }
 
         #endregion
+
+        public void creaQuadre(string rutaImatge, string nom, int fila, int columna, int midaLletra)
+        {
+            StackPanel persona = new StackPanel();
+            TextBlock nomPersona = new TextBlock();
+
+            nomPersona.FontSize = midaLletra;
+            nomPersona.FontWeight = FontWeights.Bold;
+            nomPersona.HorizontalAlignment = HorizontalAlignment.Center;
+            nomPersona.VerticalAlignment = VerticalAlignment.Bottom;
+            nomPersona.Text = nom;
+
+            persona.Children.Add(nomPersona);
+            ImageBrush fons = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), rutaImatge)));
+            persona.Background = fons;
+            
+            Grid.SetColumn(persona, columna);
+            Grid.SetRow(persona, fila);
+            grdEscenari.Children.Add(persona);
+        }
 
 
         #region PROPIETATS

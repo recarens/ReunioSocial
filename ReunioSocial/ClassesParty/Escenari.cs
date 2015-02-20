@@ -193,37 +193,18 @@ namespace ClassesParty
         /// <returns>Si hi ha coincidència</returns>
         public bool NomRepetit(string nom)
         {
-            nom = nom.ToString().ToLower();
-            bool repe = false;
-            int j = 0, i = 0;
-            while (i < esc.GetLength(0) && !repe)
+            bool trobat = false;
+            int i = 0;
+            while(i < tp.NumPersones && !trobat)
             {
-                while (j < esc.GetLength(1) && !repe)
+                if(tp.ElementAt(i).Nom == nom)
                 {
-                    if (!esc[i, j].Buida)
-                    {
-                        if (((Persona)esc[i, j]).EsConvidat())
-                        {
-                            if (((Persona)esc[i, j]).Nom.ToString().ToLower() == nom)
-                            {
-                                repe = true;
-
-                            }
-                        }
-                        else
-                        {
-                            if (((Cambrer)esc[i, j]).NomC.ToString().ToLower() == nom)
-                            {
-                                repe = true;
-                            }
-                        }
-                    }
-                    j++;
+                    trobat = true;
                 }
                 i++;
-                j = 0;
             }
-            return repe;
+
+            return trobat;
         }
         /// <summary>
         /// Fa que totes les persones facin un moviment
