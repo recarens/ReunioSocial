@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ClassesParty;
+using System.Windows.Media.Animation;
+using System.Threading;
+using System.Windows.Threading;
+
 namespace ReunioSocial
 {
     /// <summary>
@@ -33,6 +37,8 @@ namespace ReunioSocial
         string[] imgDones = { "tia1.png", "tia2.png", "tia3.png", "tia4.png", "tia5.png", "tia6.png", "tia7.png", "tia8.png", "tia9.png", "tia10.png", "tia11.png" };
 
         Escenari esc;
+
+        int pausa = 2;
 
         public MainWindow()
         {
@@ -267,6 +273,13 @@ namespace ReunioSocial
 
         public void creaQuadre(string rutaImatge, string nom, int fila, int columna, int midaLletra)
         {
+            //DoubleAnimation animacio = new DoubleAnimation();
+
+            //animacio.To = Grid.get;
+            //animacio.Duration = TimeSpan.FromSeconds(pausa / 100);
+
+            //animacio.BeginAnimation(Grid.GetColumn,null);
+
             StackPanel persona = new StackPanel();
             TextBlock nomPersona = new TextBlock();
             
@@ -313,5 +326,16 @@ namespace ReunioSocial
         }
 
         #endregion
+
+        private void Espera(double segons)
+        {
+            var frame = new DispatcherFrame();
+            new Thread((ThreadStart)(() =>
+            {
+                Thread.Sleep(TimeSpan.FromSeconds(segons));
+                frame.Continue = false;
+            })).Start();
+            Dispatcher.PushFrame(frame);
+        }
     }
 }

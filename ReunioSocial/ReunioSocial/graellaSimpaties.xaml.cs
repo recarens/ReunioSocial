@@ -67,7 +67,7 @@ namespace ReunioSocial
         #region GENEREM TOTA LA GRAELLA DE SIMPATIES
         private void ompleSimpaties()
         {
-            TextBlock simpatiaPersona;
+            TextBox simpatiaPersona;
 
             // Mostrem les simpaties de cada convidat anvers a totes les altres a la graella
             for (int i = 0; i < num_convidats; i++)
@@ -76,7 +76,8 @@ namespace ReunioSocial
                 {
                     if (j != i && !(esc.Tp.ElementAt(i) is Cambrer) && !(esc.Tp.ElementAt(j) is Cambrer))
                     {
-                        simpatiaPersona = new TextBlock();
+                        simpatiaPersona = new TextBox();
+                        
                         simpatiaPersona.FontSize = 16;
                         simpatiaPersona.FontWeight = FontWeights.Bold;
                         simpatiaPersona.VerticalAlignment = VerticalAlignment.Center;
@@ -86,11 +87,14 @@ namespace ReunioSocial
                         {
                             Home aux = (Home)esc.Tp.ElementAt(i);
                             simpatiaPersona.Text = (aux[esc.Tp.ElementAt(j).Nom] + aux.PlusSexe).ToString();
+                            simpatiaPersona.TextChanged += simpatiaPersona_TextChanged(esc.Tp.ElementAt(i), simpatiaPersona.Text);
                         }
                         else if (esc.Tp.ElementAt(i) is Dona)
                         {
                             Dona aux = (Dona)esc.Tp.ElementAt(i);
                             simpatiaPersona.Text = (aux[esc.Tp.ElementAt(j).Nom] + aux.PlusSexe).ToString();
+                            simpatiaPersona.TextChanged += simpatiaPersona_TextChanged(esc.Tp.ElementAt(i), simpatiaPersona.Text);
+                            
                         }
 
                         Grid.SetColumn(simpatiaPersona, j + 1);
@@ -99,6 +103,11 @@ namespace ReunioSocial
                     }
                 }
             }
+        }
+
+        private TextChangedEventHandler simpatiaPersona_TextChanged(Persona persona, string nouValor)
+        {
+            throw new Exception();
         }
 
         // Inicialitzem la graella amb els noms dels convidats a la primera fila i també a la primera columna

@@ -83,3 +83,14 @@ C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Users\Eric\Documents\GitHub\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ReunioSocial\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
