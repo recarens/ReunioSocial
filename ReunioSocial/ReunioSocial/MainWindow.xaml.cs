@@ -111,6 +111,11 @@ namespace ReunioSocial
                 // generem valors aleatòris
                 fila = r.Next(0, num_files);
                 columna = r.Next(0, num_columnes);
+                //if(esc.DestiValid(fila,columna)
+                //{
+                    
+                //}
+
                 sexe = r.Next(0, 4);
 
                 // Assignem el nom de la imatge
