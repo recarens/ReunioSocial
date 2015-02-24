@@ -30,7 +30,7 @@ namespace ReunioSocial
         string[] nomsHomes = { "joan", "jordi", "cristian", "eric", "david", "alex", "sergi", "martí", "xavier", "eudald", "gabri", "arnau" };
 
         string[] imgHomes = { "Brian.png", "Peter Griffin.png", "Quagmire.PNG", "xerxes.png" };
-        string[] imgDones = { "tia1.png", "tia2.png", "tia3.png", "tia4.png", "tia5.png", "tia6.png", "tia7.png", "tia8.png", "tia9.png", "tia10.png", "tia11png" };
+        string[] imgDones = { "tia1.png", "tia2.png", "tia3.png", "tia4.png", "tia5.png", "tia6.png", "tia7.png", "tia8.png", "tia9.png", "tia10.png", "tia11.png" };
 
         Escenari esc;
 
