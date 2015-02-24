@@ -10,6 +10,7 @@ namespace ClassesParty
     {
         string nom;
         string nomImg;
+        static Random r = new Random();
 
         /// <summary>
         /// Crea una persona
@@ -41,6 +42,7 @@ namespace ClassesParty
         public string Nom
         {
             get { return nom;}
+            set { this.nom = value; }
         }
         /// <summary>
         /// Retorna que la posició ocupada per aquesta persona no està buida
@@ -73,7 +75,7 @@ namespace ClassesParty
             {
                 if(p.Nom != this.Nom) // Controlem que no calculi a la persona que estem tractant
                 {
-                    atraccio += Interes(p) / Posicio.Distancia(posicio,p);
+                     atraccio += Interes(p) / Posicio.Distancia(posicio,p);
                 }
             }
 
@@ -99,7 +101,7 @@ namespace ClassesParty
             double avall = 0;
             double quiet = 0;
             double resultat;
-            Random r = new Random();
+            
             // Calculem totes les atraccions
             if (esc.DestiValid(this.Fila - 1, this.Columna))
             {

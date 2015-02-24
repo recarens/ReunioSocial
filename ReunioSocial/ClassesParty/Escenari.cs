@@ -135,7 +135,7 @@ namespace ClassesParty
                         if (((Persona)esc[i, j]).EsConvidat())
                             contingut[i, j] = ((Convidat)esc[i, j]).Nom.ToString().Trim();
                         else
-                            contingut[i, j] = ((Cambrer)esc[i, j]).NomC.ToString().Trim();
+                            contingut[i, j] = ((Cambrer)esc[i, j]).Nom.ToString().Trim();
                     }
                 }
             }

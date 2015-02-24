@@ -57,7 +57,7 @@ namespace ClassesParty
             }
             else
             {
-                taulaPersones.Add(((Cambrer)pers).NomC.ToString().ToLower(), pers);
+                taulaPersones.Add(((Cambrer)pers).Nom.ToString().ToLower(), pers);
             }
             
         }
@@ -73,7 +73,7 @@ namespace ClassesParty
             }
             else
             {
-                taulaPersones.Remove(((Cambrer)pers).NomC.ToString().ToLower());
+                taulaPersones.Remove(((Cambrer)pers).Nom.ToString().ToLower());
             }
         }
         /// <summary>

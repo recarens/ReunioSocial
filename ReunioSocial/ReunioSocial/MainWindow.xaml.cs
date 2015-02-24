@@ -156,7 +156,7 @@ namespace ReunioSocial
                 nomImatge = "/Fotos/Cambrer/Camarero.png";                
 
                 // Creem un nou home i la col·loquem a l'escenari
-                Cambrer c = new Cambrer();
+                Cambrer c = new Cambrer(nomImatge);
                 c.Columna = columna;
                 c.Fila = fila;
                 esc.posar(c);
@@ -178,6 +178,7 @@ namespace ReunioSocial
         /// <param name="e"></param>
         private void btnInicia_Click(object sender, RoutedEventArgs e)
         {
+            
             iniciaEscenari();
 
             num_convidats = num_homes + num_dones;
@@ -251,7 +252,7 @@ namespace ReunioSocial
         {
             StackPanel persona = new StackPanel();
             TextBlock nomPersona = new TextBlock();
-
+            
             nomPersona.FontSize = midaLletra;
             nomPersona.FontWeight = FontWeights.Bold;
             nomPersona.Foreground = new SolidColorBrush(Colors.Red);
