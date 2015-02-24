@@ -111,10 +111,12 @@ namespace ReunioSocial
                 // generem valors aleatòris
                 fila = r.Next(0, num_files);
                 columna = r.Next(0, num_columnes);
-                //if(esc.DestiValid(fila,columna)
-                //{
-                    
-                //}
+
+                while(!esc.DestiValid(fila,columna))
+                {
+                    fila = r.Next(0, num_files);
+                    columna = r.Next(0, num_columnes);    
+                }
 
                 sexe = r.Next(0, 4);
 
@@ -136,6 +138,11 @@ namespace ReunioSocial
                 // generem valors aleatòris
                 fila = r.Next(0, num_files);
                 columna = r.Next(0, num_columnes);
+                while (!esc.DestiValid(fila, columna))
+                {
+                    fila = r.Next(0, num_files);
+                    columna = r.Next(0, num_columnes);
+                }
                 sexe = r.Next(0, 4);
 
                 // Assignem el nom de la imatge
@@ -157,6 +164,11 @@ namespace ReunioSocial
                 // generem valors aleatòris
                 fila = r.Next(0, num_files);
                 columna = r.Next(0, num_columnes);
+                while (!esc.DestiValid(fila, columna))
+                {
+                    fila = r.Next(0, num_files);
+                    columna = r.Next(0, num_columnes);
+                }
 
                 nomImatge = "/Fotos/Cambrer/Camarero.png";                
 
