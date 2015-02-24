@@ -60,7 +60,7 @@
         </WrapPanel>
         <StackPanel Width="auto" Grid.Row="3" Grid.Column="1">
             <Label Margin="40 10" FontSize="14" FontWeight="Bold" >Numero de columnes</Label>
-            <Slider x:Name="sldColumnes" Maximum="10" Minimum="1" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldColumnes_ValueChanged" Interval="1" IsSnapToTickEnabled="True"/>
+            <Slider x:Name="sldColumnes" Maximum="30" Minimum="1" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldColumnes_ValueChanged" Interval="1" IsSnapToTickEnabled="True"/>
         </StackPanel>
         
 
@@ -72,7 +72,7 @@
         </WrapPanel>
         <StackPanel Width="auto" Grid.Row="4" Grid.Column="1">
             <Label Margin="40 10" FontSize="14" FontWeight="Bold" >Numero de files</Label>
-            <Slider x:Name="sldFiles" Maximum="10" Minimum="1"  SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldFiles_ValueChanged" Interval="1" IsSnapToTickEnabled="True"/>
+            <Slider x:Name="sldFiles" Maximum="30" Minimum="1"  SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldFiles_ValueChanged" Interval="1" IsSnapToTickEnabled="True"/>
         </StackPanel>
         
 

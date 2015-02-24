@@ -26,11 +26,6 @@ namespace ReunioSocial
             this.m = m;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btnAcceptar_Click(object sender, RoutedEventArgs e)
         {
             m.Num_homes = (int)sldHomes.Value;
