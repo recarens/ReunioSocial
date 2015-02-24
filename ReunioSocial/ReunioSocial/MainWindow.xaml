@@ -23,10 +23,10 @@
         </Grid.RowDefinitions>
         <Grid x:Name="grdEscenari" Grid.Column="0" Margin="10"/>
         <!--<Grid x:Name="grdGraella" Width="auto" Height="auto" Background="#FFFFEEEE" Grid.Column="1" Margin="20,0,0,86" Opacity="0.5"/>-->
-        <WrapPanel Grid.ColumnSpan="2" Grid.Row="1" Margin="5">
-            <Button x:Name="btnConfigura" Width="auto" Margin="50,0" Padding="10" Content="Configura" FontSize="20" FontWeight="Bold" Click="btnConfigura_Click"/>
-            <Button x:Name="btnInicia" Width="auto" Margin="50,0" Padding="10" Content="Paga l'entrada" FontSize="20" FontWeight="Bold" Click="btnInicia_Click"/>
-            <Button x:Name="btnCicle" Width="auto" Margin="50,0" Padding="10"  Content="Que siga la fiesta" FontSize="20" FontWeight="Bold" Click="btnCicle_Click"/>
-        </WrapPanel>
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="1" Margin="5" Width="auto" Orientation="Horizontal">
+            <Button x:Name="btnConfigura" Width="auto"  Margin="5,0" Padding="5" Content="1 - Configura" FontSize="20" FontWeight="Bold" Click="btnConfigura_Click"/>
+            <Button x:Name="btnInicia" Width="auto" Margin="5,0" Padding="5" Content="2 - Paga l'entrada" FontSize="20" FontWeight="Bold" Click="btnInicia_Click"/>
+            <Button x:Name="btnCicle" Width="auto" Margin="5,0" Padding="5"  Content="3 - Que siga la fiesta" FontSize="20" FontWeight="Bold" Click="btnCicle_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

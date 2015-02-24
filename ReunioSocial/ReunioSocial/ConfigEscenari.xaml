@@ -24,7 +24,7 @@
         </WrapPanel>
         <StackPanel Width="auto" Grid.Row="0" Grid.Column="1">
             <Label Margin="40 10" FontSize="14" FontWeight="Bold">Numero de cambrers</Label>
-            <Slider x:Name="sldCambrers" Maximum="10" Minimum="1" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldCambrers_ValueChanged" Interval="1" IsSnapToTickEnabled="True"/>
+            <Slider x:Name="sldCambrers" Maximum="10" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldCambrers_ValueChanged" Interval="1" IsSnapToTickEnabled="True"/>
         </StackPanel>
 
 
@@ -36,7 +36,7 @@
         </WrapPanel>
         <StackPanel Width="auto" Grid.Row="1" Grid.Column="1">
             <Label  Margin="40 10" FontSize="14" FontWeight="Bold">Numero d'homes</Label>
-            <Slider x:Name="sldHomes" Maximum="10" Minimum="1" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldHomes_ValueChanged" Interval="1" IsSnapToTickEnabled="True"/>
+            <Slider x:Name="sldHomes" Maximum="10" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldHomes_ValueChanged" Interval="1" IsSnapToTickEnabled="True"/>
         </StackPanel>
         
 
@@ -48,7 +48,7 @@
         </WrapPanel>
         <StackPanel Width="auto" Grid.Row="2" Grid.Column="1">
             <Label  Margin="40 10" FontSize="14" FontWeight="Bold">Numero de dones</Label>
-            <Slider x:Name="sldDones" Maximum="10" Minimum="1" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldDones_ValueChanged" Interval="1" IsSnapToTickEnabled="True"/>
+            <Slider x:Name="sldDones" Maximum="10" SmallChange="1" Value="1" LargeChange="2" ValueChanged="sldDones_ValueChanged" Interval="1" IsSnapToTickEnabled="True"/>
         </StackPanel>
         
 

@@ -254,16 +254,13 @@ namespace ReunioSocial
 
             nomPersona.FontSize = midaLletra;
             nomPersona.FontWeight = FontWeights.Bold;
-            Color c = new Color();
-            c.R = 255;
-            nomPersona.Foreground = new SolidColorBrush(c);
-            nomPersona.HorizontalAlignment = HorizontalAlignment.Center;
-            nomPersona.VerticalAlignment = VerticalAlignment.Bottom;
+            nomPersona.Foreground = new SolidColorBrush(Colors.Red);
             nomPersona.Text = nom;
 
             persona.Children.Add(nomPersona);
             ImageBrush fons = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), rutaImatge)));
             persona.Background = fons;
+            
 
             Grid.SetColumn(persona, columna);
             Grid.SetRow(persona, fila);
