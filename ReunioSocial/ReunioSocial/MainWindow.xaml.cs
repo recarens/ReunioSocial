@@ -273,15 +273,11 @@ namespace ReunioSocial
 
         public void creaQuadre(string rutaImatge, string nom, int fila, int columna, int midaLletra)
         {
-            //DoubleAnimation animacio = new DoubleAnimation();
-
-            //animacio.To = Grid.get;
-            //animacio.Duration = TimeSpan.FromSeconds(pausa / 100);
-
-            //animacio.BeginAnimation(Grid.GetColumn,null);
-
             StackPanel persona = new StackPanel();
             TextBlock nomPersona = new TextBlock();
+
+            
+                       
             
             nomPersona.FontSize = midaLletra;
             nomPersona.FontWeight = FontWeights.Bold;
@@ -296,6 +292,8 @@ namespace ReunioSocial
             Grid.SetColumn(persona, columna);
             Grid.SetRow(persona, fila);
             grdEscenari.Children.Add(persona);
+
+            //FerAnimacio();
         }
 
         #region PROPIETATS
@@ -326,6 +324,26 @@ namespace ReunioSocial
         }
 
         #endregion
+
+
+        //private void FerAnimacio()
+        //{
+        //    int filaInici = 
+        //    StackPanel contingut = (StackPanel)grdEscenari.Children[0];
+
+        //    SolidColorBrush color = new SolidColorBrush(Colors.Blue);
+        //    contingut.Background = color;
+
+        //    Grid.SetColumn(contingut, 1);
+
+        //    DoubleAnimation animacio = new DoubleAnimation(1,0,TimeSpan.FromSeconds(3));
+
+        //    animacio.BeginAnimation(StackPanel.OpacityProperty, animacio);
+
+        //    Espera(pausa / 100);
+            
+
+        //}
 
         private void Espera(double segons)
         {

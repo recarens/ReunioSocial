@@ -87,13 +87,13 @@ namespace ReunioSocial
                         {
                             Home aux = (Home)esc.Tp.ElementAt(i);
                             simpatiaPersona.Text = (aux[esc.Tp.ElementAt(j).Nom] + aux.PlusSexe).ToString();
-                            simpatiaPersona.TextChanged += simpatiaPersona_TextChanged(esc.Tp.ElementAt(i), simpatiaPersona.Text);
+                            //simpatiaPersona.TextChanged += simpatiaPersona_TextChanged(esc.Tp.ElementAt(i), simpatiaPersona.Text);
                         }
                         else if (esc.Tp.ElementAt(i) is Dona)
                         {
                             Dona aux = (Dona)esc.Tp.ElementAt(i);
                             simpatiaPersona.Text = (aux[esc.Tp.ElementAt(j).Nom] + aux.PlusSexe).ToString();
-                            simpatiaPersona.TextChanged += simpatiaPersona_TextChanged(esc.Tp.ElementAt(i), simpatiaPersona.Text);
+                            //simpatiaPersona.TextChanged += simpatiaPersona_TextChanged(esc.Tp.ElementAt(i), simpatiaPersona.Text);
                             
                         }
 
