@@ -18,3 +18,8 @@ C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ClassesParty\bin\Debug\Classes
 C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ClassesParty\obj\Debug\ClassesParty.csprojResolveAssemblyReference.cache
 C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ClassesParty\obj\Debug\ClassesParty.dll
 C:\Users\daviid\Desktop\ReunioSocial\ReunioSocial\ClassesParty\obj\Debug\ClassesParty.pdb
+C:\Users\Joan\Documents\GitHub\ReunioSocial\ReunioSocial\ClassesParty\bin\Debug\ClassesParty.dll
+C:\Users\Joan\Documents\GitHub\ReunioSocial\ReunioSocial\ClassesParty\bin\Debug\ClassesParty.pdb
+C:\Users\Joan\Documents\GitHub\ReunioSocial\ReunioSocial\ClassesParty\obj\Debug\ClassesParty.csprojResolveAssemblyReference.cache
+C:\Users\Joan\Documents\GitHub\ReunioSocial\ReunioSocial\ClassesParty\obj\Debug\ClassesParty.dll
+C:\Users\Joan\Documents\GitHub\ReunioSocial\ReunioSocial\ClassesParty\obj\Debug\ClassesParty.pdb
